@@ -202,6 +202,24 @@ const RAW: SeedGift[] = [
     sortOrder: 10,
     active: true,
   },
+  {
+    id: "passeio-a-dois",
+    slug: "passeio-a-dois",
+    title: "Um passeio a dois",
+    description:
+      "Pra lembrar que ainda existe vida (e romance) fora do sofá. Cada cota banca um rolê especial do casal — aquele programa que a gente sempre adia.",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 30000,
+    totalCotas: 6,
+    cotasSold: 1,
+    photos: [
+      IMG("photo-1530789253388-582c481c54b0"),
+      IMG("photo-1566759996874-04d713cc224a"),
+    ],
+    sortOrder: 11,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
