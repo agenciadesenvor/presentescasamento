@@ -166,6 +166,42 @@ const RAW: SeedGift[] = [
     sortOrder: 8,
     active: true,
   },
+  {
+    id: "foto-chique-no-chile",
+    slug: "foto-chique-no-chile",
+    title: "Uma foto bonita no Chile",
+    description:
+      "Pra provar pra geral que a lua de mel foi chique de doer. Cada cota é um clique digno de moldura (e de muita inveja no feed).",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 9000,
+    totalCotas: 20,
+    cotasSold: 3,
+    photos: [
+      IMG("photo-1558517286-6b7b81953cb5"),
+      IMG("photo-1715356758153-6d58ae44e8fe"),
+    ],
+    sortOrder: 9,
+    active: true,
+  },
+  {
+    id: "ingresso-do-corinthians",
+    slug: "ingresso-do-corinthians",
+    title: "Um ingresso pro jogo do Corinthians",
+    description:
+      "Porque o noivo também merece sofrer fora do casamento. Cada cota é um lugar na arquibancada pra ele gritar com o juiz em paz.",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 12000,
+    totalCotas: 11,
+    cotasSold: 4,
+    photos: [
+      IMG("photo-1522778119026-d647f0596c20"),
+      IMG("photo-1579952363873-27f3bade9f55"),
+    ],
+    sortOrder: 10,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
