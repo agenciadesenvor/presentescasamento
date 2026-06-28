@@ -113,24 +113,6 @@ const RAW: SeedGift[] = [
     active: true,
   },
   {
-    id: "guerra-do-ar-condicionado",
-    slug: "guerra-do-ar-condicionado",
-    title: "Uma cota do ar-condicionado",
-    description:
-      "Ele quer 18°C, ela quer 23°C. Cada cota financia a paz climática do lar (e o cobertor extra de quem perder a discussão).",
-    category: "divertidas",
-    isFun: true,
-    cotaPrice: 7000,
-    totalCotas: 18,
-    cotasSold: 6,
-    photos: [
-      IMG("photo-1718203862467-c33159fdc504"),
-      IMG("photo-1700124113583-81aa99ea2aa2"),
-    ],
-    sortOrder: 6,
-    active: true,
-  },
-  {
     id: "robo-aspirador-da-paz",
     slug: "robo-aspirador-da-paz",
     title: "Um robô aspirador pra paz do lar",
