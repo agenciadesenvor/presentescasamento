@@ -117,26 +117,14 @@ values (
   'Elison & Patrícia',
   '2026-10-23',
   null,
-  'A gente já tem o principal: um ao outro. Mas se quiser fazer parte da nossa próxima fase, escolhe uma cota aí embaixo. 🤎',
-  'Entre encontros, risadas e muitos perrengues divididos, a gente descobriu que a vida fica bem melhor a dois. Agora é pra sempre — e queremos você junto nessa festa.'
+  'A gente já tem o principal: um ao outro. Mas se quiser fazer parte da nossa próxima fase (e dar boas risadas), escolhe uma cota aí embaixo. 🤎',
+  null
 )
 on conflict (id) do nothing;
 
 -- ---------- SEED: presentes ----------
 insert into public.gifts (slug, title, description, category, is_fun, cota_price, total_cotas, photos, sort_order) values
-('caipirinha-lua-de-mel','Caipirinha na lua de mel','Cada cota é uma caipirinha gelada que vamos tomar na beira da praia pensando em você. Spoiler: vamos brindar ao seu nome (e talvez chorar de saudade).','divertidas',true,4000,25,'{"emoji:🍹","emoji:🏖️"}',1),
-('antironco-madrugada','Antironco da madrugada','Fundo coletivo para travesseiros melhores, faixa nasal e paz conjugal às 3 da manhã. Sua contribuição salva um casamento (o nosso).','divertidas',true,3500,20,'{"emoji:😴","emoji:🛌"}',2),
-('pelo-de-pet-no-sofa','Pelo de pet no sofá','Amamos nossos bichos, mas o sofá não. Cada cota vira um pedacinho de aspirador potente. O sofá agradece, os pets nem ligam.','divertidas',true,5000,15,'{"emoji:🐶","emoji:🐱"}',3),
-('briga-de-casal-evitada','Briga de casal evitada','Reverte em massagem relaxante e/ou terapia de casal. Funciona melhor que contar até dez. Presente cientificamente comprovado por nós dois.','divertidas',true,7000,12,'{"emoji:🧘","emoji:💆"}',4),
-('um-dia-sem-cozinhar','Um dia sem cozinhar','Cada cota é um delivery que a gente vai pedir sem culpa nenhuma. Pizza, sushi, açaí: o destino decide. Você só assiste à preguiça vencer.','divertidas',true,4500,30,'{"emoji:🍕","emoji:🍣"}',5),
-('tijolo-da-casa-nova','Um tijolo da casa nova','Literalmente um tijolo. Junte alguns e a gente levanta uma parede. Junte muitos e ganha um quarto com seu nome (mentira, mas o carinho é real).','divertidas',true,3000,50,'{"emoji:🧱","emoji:🏗️"}',6),
-('tanque-cheio-lua-de-mel','Tanque cheio rumo à lua de mel','Combustível para chegar (e voltar) da viagem dos sonhos. Cada cota é um pedaço de estrada com a janela aberta e a playlist no talo.','divertidas',true,6000,20,'{"emoji:⛽","emoji:🚗"}',7),
-('vinho-da-segunda-feira','Vinho pra aguentar a segunda','Uma garrafa boa transforma qualquer segunda em quinta. Ajude a montar nossa adega de sobrevivência semanal.','divertidas',true,5500,24,'{"emoji:🍷","emoji:🧀"}',8),
-('geladeira-dos-sonhos','Geladeira dos sonhos','Aquela enorme, com dispenser de água e espaço pra esconder sobremesa. Dividida em cotas pra ficar leve no seu bolso e pesada na nossa cozinha.','casa',false,5000,30,'{"emoji:🧊","emoji:🍦"}',10),
-('sofa-pra-maratonar','Sofá pra maratonar séries','O trono oficial das nossas noites de pijama. Cada cota é um cantinho confortável onde a gente vai dormir no meio do filme.','casa',false,5000,20,'{"emoji:🛋️","emoji:📺"}',11),
-('jogo-de-cama-king','Jogo de cama king size','Lençóis macios o suficiente pra ninguém querer levantar. Cada cota é um fio dessa felicidade de algodão egípcio.','casa',false,4000,15,'{"emoji:🛏️","emoji:🌙"}',12),
-('jogo-de-panelas','Jogo de panelas completo','Pra cozinhar pros amigos (e fingir que somos chefs). Cada cota é uma panela onde vai nascer um jantar inesquecível ou um miojo gourmet.','cozinha',false,5000,10,'{"emoji:🍳","emoji:🥘"}',13),
-('air-fryer','Air fryer (adeus, fritura)','A gente promete usar todo dia nas primeiras duas semanas. Cada cota nos aproxima de batatas crocantes sem culpa.','cozinha',false,4500,12,'{"emoji:🍟","emoji:🍗"}',14),
-('diaria-hotel-dos-sonhos','Diária no hotel dos sonhos','Aquele hotel com vista pro mar e café da manhã sem hora pra acabar. Cada cota é um pedacinho do nosso descanso merecido.','lua_de_mel',false,5000,40,'{"emoji:🏝️","emoji:🌅"}',15),
-('passeio-de-barco','Passeio de barco a dois','Pôr do sol, mar calmo e zero sinal de celular. Cada cota é uma onda mais perto desse momento de cinema.','lua_de_mel',false,8000,15,'{"emoji:⛵","emoji:🌊"}',16)
+('jiu-jitsu-do-noivo','Um mês de jiu-jitsu pro noivo','Pra ele descontar no tatame todo o estresse que a noiva causa (com muito amor, claro). Cada cota é um mês de mata-leão terapêutico e paz garantida em casa.','divertidas',true,15000,12,'{"https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1603210185246-b1662978ea37?w=1200&q=80&auto=format&fit=crop"}',1),
+('parcela-do-ps5','Uma parcela do PS5 pro noivo','Pra ele lembrar que ainda tem sonhos mesmo depois de casado. Cada cota quita uma parcela rumo ao console — e a noiva finge que não viu.','divertidas',true,20000,10,'{"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=1200&q=80&auto=format&fit=crop"}',2),
+('diaria-de-silencio','Uma diária de silêncio pro noivo','Um dia inteirinho pra ele jogar em paz, sem nenhum “amor, vem aqui rapidinho”. Cada cota garante mais horas sagradas de concentração total.','divertidas',true,8000,15,'{"https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1610041321327-b794c052db27?w=1200&q=80&auto=format&fit=crop"}',3)
 on conflict (slug) do nothing;

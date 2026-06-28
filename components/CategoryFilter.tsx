@@ -19,8 +19,9 @@ export default function CategoryFilter({
   counts: Record<FilterValue, number>;
 }) {
   const items: { key: FilterValue; label: string; emoji: string }[] = [
-    { key: "todos", label: "Tudo", emoji: "💛" },
-    ...CATEGORY_ORDER.map((c) => ({
+    { key: "todos", label: "Tudo", emoji: "🤎" },
+    // Só mostra categorias que têm ao menos um presente.
+    ...CATEGORY_ORDER.filter((c) => (counts[c] ?? 0) > 0).map((c) => ({
       key: c,
       label: CATEGORY_LABELS[c],
       emoji: CATEGORY_EMOJI[c],

@@ -48,26 +48,8 @@ export default function Hero({ settings }: { settings: Settings }) {
           <a href="#presentes" className="btn-primary">
             🎁 Ver a lista de presentes
           </a>
-          {settings.story && (
-            <a href="#nossa-historia" className="btn-ghost">
-              Nossa história
-            </a>
-          )}
         </div>
       </div>
-
-      {settings.story && (
-        <section id="nossa-historia" className="container-page pb-10 sm:pb-14">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-cream-200 bg-white/70 p-6 text-center shadow-card backdrop-blur sm:p-8">
-            <h2 className="font-serif text-xl text-forest-700 sm:text-2xl">
-              Como tudo começou
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-              {settings.story}
-            </p>
-          </div>
-        </section>
-      )}
     </header>
   );
 }
