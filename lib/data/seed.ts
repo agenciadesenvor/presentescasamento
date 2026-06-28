@@ -76,6 +76,96 @@ const RAW: SeedGift[] = [
     sortOrder: 3,
     active: true,
   },
+  {
+    id: "pilates-da-noiva",
+    slug: "pilates-da-noiva",
+    title: "2 sessões de pilates pra noiva",
+    description:
+      "Pra ela aguentar firme o peso de estar sempre certa (e ela está). Cada cota são duas aulas de alongamento, equilíbrio e paciência reforçada.",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 16000,
+    totalCotas: 10,
+    cotasSold: 1,
+    photos: [
+      IMG("photo-1747239069226-55382c570116"),
+      IMG("photo-1579454566790-f9e5697ddf36"),
+    ],
+    sortOrder: 4,
+    active: true,
+  },
+  {
+    id: "massagem-da-noiva",
+    slug: "massagem-da-noiva",
+    title: "1 sessão de massagem pra noiva",
+    description:
+      "Pra relaxar os ombros depois de explicar a mesma coisa pela quinta vez. Cada cota é uma hora de paz total e zero perguntas repetidas.",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 12000,
+    totalCotas: 12,
+    cotasSold: 4,
+    photos: [
+      IMG("photo-1600334089648-b0d9d3028eb2"),
+      IMG("photo-1515377905703-c4788e51af15"),
+    ],
+    sortOrder: 5,
+    active: true,
+  },
+  {
+    id: "guerra-do-ar-condicionado",
+    slug: "guerra-do-ar-condicionado",
+    title: "Uma cota do ar-condicionado",
+    description:
+      "Ele quer 18°C, ela quer 23°C. Cada cota financia a paz climática do lar (e o cobertor extra de quem perder a discussão).",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 7000,
+    totalCotas: 18,
+    cotasSold: 6,
+    photos: [
+      IMG("photo-1718203862467-c33159fdc504"),
+      IMG("photo-1700124113583-81aa99ea2aa2"),
+    ],
+    sortOrder: 6,
+    active: true,
+  },
+  {
+    id: "robo-aspirador-da-paz",
+    slug: "robo-aspirador-da-paz",
+    title: "Um robô aspirador pra paz do lar",
+    description:
+      "Pra encerrar de vez a discussão milenar de quem vai limpar. Cada cota é um pedacinho do nosso novo melhor amigo (que trabalha sozinho).",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 13000,
+    totalCotas: 12,
+    cotasSold: 3,
+    photos: [
+      IMG("photo-1558317374-067fb5f30001"),
+      IMG("photo-1600322305530-45714a0bc945"),
+    ],
+    sortOrder: 7,
+    active: true,
+  },
+  {
+    id: "terapia-de-casal",
+    slug: "terapia-de-casal",
+    title: "Uma rodada de terapia de casal",
+    description:
+      "Pra decidir, com ajuda profissional, de quem é a culpa (a gente já sabe, mas é bom ter testemunha). Cada cota é uma sessão rumo ao “eu te entendo”.",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 14000,
+    totalCotas: 10,
+    cotasSold: 2,
+    photos: [
+      IMG("photo-1551847677-dc82d764e1eb"),
+      IMG("photo-1541976844346-f18aeac57b06"),
+    ],
+    sortOrder: 8,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
