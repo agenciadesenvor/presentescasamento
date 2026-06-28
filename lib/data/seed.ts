@@ -195,10 +195,7 @@ const RAW: SeedGift[] = [
     cotaPrice: 12000,
     totalCotas: 11,
     cotasSold: 4,
-    photos: [
-      IMG("photo-1522778119026-d647f0596c20"),
-      IMG("photo-1579952363873-27f3bade9f55"),
-    ],
+    photos: ["/gifts/neo-quimica-arena-1.jpg", "/gifts/neo-quimica-arena-2.jpg"],
     sortOrder: 10,
     active: true,
   },
@@ -214,8 +211,8 @@ const RAW: SeedGift[] = [
     totalCotas: 6,
     cotasSold: 1,
     photos: [
-      IMG("photo-1530789253388-582c481c54b0"),
-      IMG("photo-1566759996874-04d713cc224a"),
+      IMG("photo-1682024619121-aabb0305a496"),
+      IMG("photo-1570075017462-b5478b3abfff"),
     ],
     sortOrder: 11,
     active: true,
