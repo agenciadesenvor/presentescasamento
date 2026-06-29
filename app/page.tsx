@@ -22,11 +22,12 @@ export default async function HomePage() {
 
       <div className="container-page pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
         <h2 className="font-serif text-2xl text-ink sm:text-3xl">
-          Escolha uma cota e faça parte da festa 🎉
+          Escolha um presente e faça parte da nossa história
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-sm text-muted sm:text-base">
-          Tem presente sério e tem cota divertida. Cada uma vem com um espaço
-          pra você deixar um recadinho que a gente vai guardar pra sempre.
+          Cada gesto de carinho vai fazer parte desse novo capítulo que estamos
+          começando juntos. Escolha seu presente e deixe uma mensagem especial
+          pra nós.
         </p>
       </div>
 
