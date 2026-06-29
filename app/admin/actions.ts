@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { isSupabaseConfigured, isAdminEmail } from "@/lib/supabase/config";
 
 const PHOTO_BUCKET = "gift-photos";
 
@@ -16,7 +16,7 @@ async function requireUser() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/admin/login");
+  if (!user || !isAdminEmail(user.email)) redirect("/admin/login");
   return user;
 }
 

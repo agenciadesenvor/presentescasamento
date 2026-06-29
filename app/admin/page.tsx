@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { LogOut, ExternalLink } from "lucide-react";
 import { createServerSupabase } from "@/lib/supabase/server";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { isSupabaseConfigured, isAdminEmail } from "@/lib/supabase/config";
 import {
   getGiftsAdmin,
   getPaidPurchases,
@@ -22,7 +22,7 @@ export default async function AdminPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/admin/login");
+  if (!user || !isAdminEmail(user.email)) redirect("/admin/login");
 
   const [gifts, purchases, settings] = await Promise.all([
     getGiftsAdmin(),
