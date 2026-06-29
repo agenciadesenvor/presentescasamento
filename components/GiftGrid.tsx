@@ -40,7 +40,7 @@ export default function GiftGrid({ gifts }: { gifts: Gift[] }) {
   }, [visible, filter]);
 
   return (
-    <section id="presentes" className="container-page pb-24">
+    <section id="presentes" className="container-page scroll-mt-20 pb-24">
       <CategoryFilter value={filter} onChange={setFilter} counts={counts} />
 
       <div className="mt-6 grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">

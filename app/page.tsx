@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import GiftGrid from "@/components/GiftGrid";
 import Countdown from "@/components/Countdown";
+import SiteNav from "@/components/SiteNav";
 import { getGifts, getSettings } from "@/lib/data/gifts";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +11,7 @@ export default async function HomePage() {
 
   return (
     <main className="min-h-screen">
+      <SiteNav />
       <Hero settings={settings} />
 
       <div className="container-page pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
@@ -24,8 +26,8 @@ export default async function HomePage() {
 
       <GiftGrid gifts={gifts} />
 
-      <footer className="border-t border-cream-200 bg-cream-50">
-        <div className="container-page flex flex-col items-center gap-4 py-12 text-center">
+      <footer id="contagem" className="scroll-mt-24 border-t border-cream-200 bg-cream-50">
+        <div className="container-page flex flex-col items-center gap-4 pt-12 pb-28 text-center sm:pb-12">
           <p className="font-serif text-2xl text-ink">{settings.coupleNames}</p>
           <p className="text-sm text-muted">Contagem regressiva para o grande dia 🤎</p>
           <Countdown target="2026-10-23T16:00:00-03:00" />

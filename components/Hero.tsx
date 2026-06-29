@@ -16,7 +16,7 @@ export default function Hero({ settings }: { settings: Settings }) {
   const dateLabel = formatWeddingDate(settings.weddingDate);
 
   return (
-    <header className="relative h-[92vh] min-h-[560px] w-full overflow-hidden">
+    <header id="inicio" className="relative h-[92vh] min-h-[560px] w-full overflow-hidden">
       {/* Foto de fundo do casal */}
       <Image
         src="/hero-casal.jpg"
