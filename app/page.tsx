@@ -12,7 +12,7 @@ export default async function HomePage() {
     <main className="min-h-screen">
       <Hero settings={settings} />
 
-      <div className="container-page pb-6 pt-4 text-center">
+      <div className="container-page pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
         <h2 className="font-serif text-2xl text-ink sm:text-3xl">
           Escolha uma cota e faça parte da festa 🎉
         </h2>
