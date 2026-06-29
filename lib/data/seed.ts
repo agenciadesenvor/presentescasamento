@@ -199,6 +199,60 @@ const RAW: SeedGift[] = [
     sortOrder: 11,
     active: true,
   },
+  {
+    id: "portillo-laguna-del-inca",
+    slug: "portillo-laguna-del-inca",
+    title: "Portillo e Laguna del Inca",
+    description:
+      "O centro de esqui mais antigo do Hemisfério Sul, a 2.600m nos Andes, com a deslumbrante Laguna del Inca de águas azul-turquesa. Tour guiado saindo de Santiago, com coquetel a bordo. (O passeio mais procurado do roteiro!)",
+    category: "lua_de_mel",
+    isFun: false,
+    cotaPrice: 38800,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1614586125858-e695dd97d1b6"),
+      IMG("photo-1610226977301-986edce66047"),
+    ],
+    sortOrder: 12,
+    active: true,
+  },
+  {
+    id: "embalse-el-yeso",
+    slug: "embalse-el-yeso",
+    title: "Embalse el Yeso",
+    description:
+      "Uma aventura pelos Andes até a represa gigante cercada de montanhas, com uma vista de tirar o fôlego. Tour guiado saindo de Santiago, pelo Cajón del Maipo.",
+    category: "lua_de_mel",
+    isFun: false,
+    cotaPrice: 32300,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1589071780475-89033c3cef5a"),
+      IMG("photo-1719258179071-8f04134d6796"),
+    ],
+    sortOrder: 13,
+    active: true,
+  },
+  {
+    id: "embalse-el-yeso-termas",
+    slug: "embalse-el-yeso-termas",
+    title: "Embalse el Yeso e Termas da Colina",
+    description:
+      "O azul do Embalse El Yeso somado ao relaxamento nas águas termais naturais das Termas da Colina, em meio às montanhas. Inclui café da manhã e roupão personalizado.",
+    category: "lua_de_mel",
+    isFun: false,
+    cotaPrice: 54900,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1709214406424-7acd64e9c438"),
+      IMG("photo-1600024102232-cb447dea5ba3"),
+    ],
+    sortOrder: 14,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
