@@ -10,9 +10,10 @@ import {
 } from "@/lib/data/gifts";
 import { getMessages } from "@/lib/data/messages";
 import { CATEGORY_LABELS, formatBRL } from "@/lib/types";
-import { signOutAction, deleteMessageAction } from "./actions";
+import { signOutAction } from "./actions";
 import GiftsManager from "./GiftsManager";
 import SettingsForm from "./SettingsForm";
+import DeleteMessageButton from "./DeleteMessageButton";
 
 export const dynamic = "force-dynamic";
 
@@ -133,18 +134,7 @@ export default async function AdminPage() {
                       {new Date(m.createdAt).toLocaleDateString("pt-BR")}
                     </p>
                   </div>
-                  <form
-                    action={deleteMessageAction}
-                    className="shrink-0"
-                  >
-                    <input type="hidden" name="id" value={m.id} />
-                    <button
-                      type="submit"
-                      className="rounded-full px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50"
-                    >
-                      Apagar
-                    </button>
-                  </form>
+                  <DeleteMessageButton id={m.id} name={m.name} />
                 </div>
               ))}
             </div>
