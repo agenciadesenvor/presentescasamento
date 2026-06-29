@@ -2,12 +2,18 @@ import Hero from "@/components/Hero";
 import GiftGrid from "@/components/GiftGrid";
 import Countdown from "@/components/Countdown";
 import SiteNav from "@/components/SiteNav";
+import MessageWall from "@/components/MessageWall";
 import { getGifts, getSettings } from "@/lib/data/gifts";
+import { getMessages } from "@/lib/data/messages";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const [gifts, settings] = await Promise.all([getGifts(), getSettings()]);
+  const [gifts, settings, messages] = await Promise.all([
+    getGifts(),
+    getSettings(),
+    getMessages(),
+  ]);
 
   return (
     <main className="min-h-screen">
@@ -25,6 +31,24 @@ export default async function HomePage() {
       </div>
 
       <GiftGrid gifts={gifts} />
+
+      <section
+        id="recados"
+        className="scroll-mt-20 border-t border-cream-200 bg-cream-50"
+      >
+        <div className="container-page py-16 sm:py-20">
+          <div className="mb-8 text-center">
+            <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+              Deixe um recado pra gente 💌
+            </h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm text-muted sm:text-base">
+              Escreva uma mensagem e veja sua cartinha aparecer no mural, junto
+              com a de todo mundo que ama vocês.
+            </p>
+          </div>
+          <MessageWall initial={messages} />
+        </div>
+      </section>
 
       <footer id="contagem" className="scroll-mt-24 border-t border-cream-200 bg-cream-50">
         <div className="container-page flex flex-col items-center gap-4 pt-12 pb-28 text-center sm:pb-12">

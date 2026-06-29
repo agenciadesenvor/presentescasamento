@@ -8,8 +8,9 @@ import {
   getPaidPurchases,
   getSettings,
 } from "@/lib/data/gifts";
+import { getMessages } from "@/lib/data/messages";
 import { CATEGORY_LABELS, formatBRL } from "@/lib/types";
-import { signOutAction } from "./actions";
+import { signOutAction, deleteMessageAction } from "./actions";
 import GiftsManager from "./GiftsManager";
 import SettingsForm from "./SettingsForm";
 
@@ -24,10 +25,11 @@ export default async function AdminPage() {
   } = await supabase.auth.getUser();
   if (!user || !isAdminEmail(user.email)) redirect("/admin/login");
 
-  const [gifts, purchases, settings] = await Promise.all([
+  const [gifts, purchases, settings, messages] = await Promise.all([
     getGiftsAdmin(),
     getPaidPurchases(),
     getSettings(),
+    getMessages(),
   ]);
 
   const giftTitle = new Map(gifts.map((g) => [g.id, g.title]));
@@ -61,7 +63,7 @@ export default async function AdminPage() {
           <Stat label="Arrecadado" value={formatBRL(totalRaised)} accent />
           <Stat label="Cotas vendidas" value={String(totalCotas)} />
           <Stat label="Presentes" value={String(gifts.length)} />
-          <Stat label="Recados" value={String(purchases.filter((p) => p.message).length)} />
+          <Stat label="Mural de recados" value={String(messages.length)} />
         </section>
 
         {/* Recados / compras */}
@@ -102,6 +104,47 @@ export default async function AdminPage() {
                     {p.buyerEmail} ·{" "}
                     {new Date(p.createdAt).toLocaleDateString("pt-BR")}
                   </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+
+        {/* Mural de recados */}
+        <section>
+          <h2 className="mb-3 font-serif text-lg text-ink">Mural de recados 💌</h2>
+          {messages.length === 0 ? (
+            <p className="rounded-xl2 border border-dashed border-cream-200 bg-white p-6 text-center text-sm text-muted">
+              Nenhum recado no mural ainda.
+            </p>
+          ) : (
+            <div className="space-y-3">
+              {messages.map((m) => (
+                <div
+                  key={m.id}
+                  className="flex items-start justify-between gap-3 rounded-xl2 border border-cream-200 bg-white p-4"
+                >
+                  <div className="min-w-0">
+                    <p className="font-medium text-ink">{m.name}</p>
+                    <p className="mt-1 text-sm italic text-muted">
+                      “{m.message}”
+                    </p>
+                    <p className="mt-1 text-xs text-muted">
+                      {new Date(m.createdAt).toLocaleDateString("pt-BR")}
+                    </p>
+                  </div>
+                  <form
+                    action={deleteMessageAction}
+                    className="shrink-0"
+                  >
+                    <input type="hidden" name="id" value={m.id} />
+                    <button
+                      type="submit"
+                      className="rounded-full px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50"
+                    >
+                      Apagar
+                    </button>
+                  </form>
                 </div>
               ))}
             </div>

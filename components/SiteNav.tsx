@@ -1,11 +1,12 @@
 "use client";
 
-import { Home, Gift, CalendarHeart } from "lucide-react";
+import { Home, Gift, Mail, CalendarHeart } from "lucide-react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 
 const navItems = [
   { name: "Início", url: "#inicio", icon: Home },
   { name: "Lista", url: "#presentes", icon: Gift },
+  { name: "Recados", url: "#recados", icon: Mail },
   { name: "Contagem", url: "#contagem", icon: CalendarHeart },
 ];
 

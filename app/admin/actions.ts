@@ -140,3 +140,15 @@ export async function uploadPhotoAction(formData: FormData) {
   const { data } = db.storage.from(PHOTO_BUCKET).getPublicUrl(path);
   return { url: data.publicUrl };
 }
+
+/** Apaga um recado do mural (moderação). */
+export async function deleteMessageAction(formData: FormData) {
+  await requireUser();
+  const db = createAdminClient();
+  const id = formData.get("id") as string;
+  if (id) {
+    await db.from("messages").delete().eq("id", id);
+    revalidatePath("/admin");
+    revalidatePath("/");
+  }
+}

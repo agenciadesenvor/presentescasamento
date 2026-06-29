@@ -75,3 +75,11 @@ export function formatBRL(cents: number): string {
     currency: "BRL",
   });
 }
+
+/** Recado público deixado no mural por um convidado. */
+export type Message = {
+  id: string;
+  name: string;
+  message: string;
+  createdAt: string;
+};
