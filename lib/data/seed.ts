@@ -131,24 +131,6 @@ const RAW: SeedGift[] = [
     active: true,
   },
   {
-    id: "terapia-de-casal",
-    slug: "terapia-de-casal",
-    title: "Uma rodada de terapia de casal",
-    description:
-      "Pra decidir, com ajuda profissional, de quem é a culpa (a gente já sabe, mas é bom ter testemunha). Cada cota é uma sessão rumo ao “eu te entendo”.",
-    category: "divertidas",
-    isFun: true,
-    cotaPrice: 14000,
-    totalCotas: 10,
-    cotasSold: 2,
-    photos: [
-      IMG("photo-1551847677-dc82d764e1eb"),
-      IMG("photo-1541976844346-f18aeac57b06"),
-    ],
-    sortOrder: 8,
-    active: true,
-  },
-  {
     id: "foto-chique-no-chile",
     slug: "foto-chique-no-chile",
     title: "Uma foto bonita no Chile",
@@ -264,10 +246,7 @@ const RAW: SeedGift[] = [
     cotaPrice: 7000,
     totalCotas: 10,
     cotasSold: 0,
-    photos: [
-      IMG("photo-1565538810643-b5bdb714032a"),
-      IMG("photo-1609210884848-2d530cfb2a07"),
-    ],
+    photos: ["/gifts/triturador-1.jpg", "/gifts/triturador-2.jpg"],
     sortOrder: 15,
     active: true,
   },
