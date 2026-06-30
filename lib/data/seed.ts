@@ -253,6 +253,24 @@ const RAW: SeedGift[] = [
     sortOrder: 14,
     active: true,
   },
+  {
+    id: "triturador-de-alimentos",
+    slug: "triturador-de-alimentos",
+    title: "Triturador de alimentos",
+    description:
+      "Pra dar fim aos restos de comida direto na pia, sem entupimento e sem aquela discussão de quem limpa. Praticidade que a cozinha nova merece.",
+    category: "cozinha",
+    isFun: false,
+    cotaPrice: 7000,
+    totalCotas: 10,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1565538810643-b5bdb714032a"),
+      IMG("photo-1609210884848-2d530cfb2a07"),
+    ],
+    sortOrder: 15,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
