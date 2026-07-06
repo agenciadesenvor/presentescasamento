@@ -8,15 +8,35 @@ const tracks = [
   { title: "The Scientist", src: "/music/the-scientist.mp3" },
   { title: "Marry You", src: "/music/marry-you.mp3" },
   { title: "Lifetime", src: "/music/lifetime.mp3" },
+  { title: "A Tu Lado", src: "/music/a-tu-lado.mp3" },
 ];
 
-/** Mini-player flutuante com a playlist do casal (começa ao clicar). */
+/** Mini-player flutuante com a playlist do casal. Tenta autoplay ao abrir; se
+ *  o navegador bloquear (padrão em quase todos), começa no primeiro clique/scroll. */
 export default function MusicPlayer() {
   const pathname = usePathname();
   const audioRef = useRef<HTMLAudioElement>(null);
   const wantPlay = useRef(false);
   const [current, setCurrent] = useState(0);
   const [playing, setPlaying] = useState(false);
+
+  // Autoplay ao abrir o site (com fallback no primeiro gesto do usuário).
+  useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    const events = ["pointerdown", "keydown", "touchstart", "scroll"] as const;
+    const start = () => {
+      a.play().catch(() => {});
+      events.forEach((e) => window.removeEventListener(e, start));
+    };
+    a.play().catch(() => {
+      // navegador bloqueou o som automático → toca no primeiro gesto
+      events.forEach((e) =>
+        window.addEventListener(e, start, { passive: true })
+      );
+    });
+    return () => events.forEach((e) => window.removeEventListener(e, start));
+  }, []);
 
   // Ao trocar de faixa, toca automaticamente se estávamos ouvindo.
   useEffect(() => {
@@ -47,7 +67,7 @@ export default function MusicPlayer() {
       <audio
         ref={audioRef}
         src={tracks[current].src}
-        preload="none"
+        preload="metadata"
         onEnded={next}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
