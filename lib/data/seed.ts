@@ -250,6 +250,21 @@ const RAW: SeedGift[] = [
     sortOrder: 15,
     active: true,
   },
+  {
+    id: "mixer",
+    slug: "mixer",
+    title: "Mixer",
+    description:
+      "Pra deixar a cozinha completíssima — bater, misturar e preparar de tudo com praticidade de chef.",
+    category: "cozinha",
+    isFun: false,
+    cotaPrice: 24000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: ["/gifts/mixer.jpg"],
+    sortOrder: 16,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
