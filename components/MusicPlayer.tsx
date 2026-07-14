@@ -63,7 +63,7 @@ export default function MusicPlayer() {
   }
 
   return (
-    <div className="fixed bottom-5 left-4 z-40 sm:left-5">
+    <div className="pointer-events-none fixed bottom-5 left-4 z-40 sm:left-5">
       <audio
         ref={audioRef}
         src={tracks[current].src}
@@ -72,7 +72,7 @@ export default function MusicPlayer() {
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
       />
-      <div className="flex items-center gap-1 rounded-full border border-cream-200 bg-white/90 p-1.5 shadow-card backdrop-blur">
+      <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-cream-200 bg-white/90 p-1.5 shadow-card backdrop-blur">
         <button
           type="button"
           onClick={toggle}
