@@ -298,6 +298,60 @@ const RAW: SeedGift[] = [
     sortOrder: 18,
     active: true,
   },
+  {
+    id: "jogo-de-cama-casal",
+    slug: "jogo-de-cama-casal",
+    title: "Jogo de cama casal",
+    description:
+      "Pra noite de sono valer por dois — 100% algodão, macio de deitar e não querer mais levantar. O aconchego que o quarto novo do casal merece.",
+    category: "casa",
+    isFun: false,
+    cotaPrice: 30000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1728614669329-29e10a0698ea"),
+      IMG("photo-1606855637183-ea2a00b6f15f"),
+    ],
+    sortOrder: 19,
+    active: true,
+  },
+  {
+    id: "jogo-de-toalhas-banho",
+    slug: "jogo-de-toalhas-banho",
+    title: "Jogo de toalhas de banho",
+    description:
+      "Felpudas, macias e daquelas que abraçam depois do banho. Um jogo completo pra sair da água direto pro conforto.",
+    category: "casa",
+    isFun: false,
+    cotaPrice: 20000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1639298109207-5a9ccc254481"),
+      IMG("photo-1760722974657-f64bce2f9cc5"),
+    ],
+    sortOrder: 20,
+    active: true,
+  },
+  {
+    id: "jogo-de-facas",
+    slug: "jogo-de-facas",
+    title: "Jogo de facas / cutelaria",
+    description:
+      "Lâminas afiadas de aço inox com suporte — pra picar, fatiar e cortar como gente grande na cozinha nova. Chega de faca cega emprestada.",
+    category: "cozinha",
+    isFun: false,
+    cotaPrice: 20000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1636412191749-53d84f5f3eb0"),
+      IMG("photo-1577398628388-516477602b3b"),
+    ],
+    sortOrder: 21,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({

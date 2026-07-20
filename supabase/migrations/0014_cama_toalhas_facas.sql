@@ -1,0 +1,7 @@
+-- Jogo de cama casal (casa, R$ 300), jogo de toalhas de banho (casa, R$ 200),
+-- jogo de facas/cutelaria (cozinha, R$ 200). Todos presente único.
+insert into public.gifts (slug, title, description, category, is_fun, cota_price, total_cotas, photos, sort_order) values
+('jogo-de-cama-casal','Jogo de cama casal','Pra noite de sono valer por dois — 100% algodão, macio de deitar e não querer mais levantar. O aconchego que o quarto novo do casal merece.','casa',false,30000,1,'{"https://images.unsplash.com/photo-1728614669329-29e10a0698ea?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1606855637183-ea2a00b6f15f?w=1200&q=80&auto=format&fit=crop"}',19),
+('jogo-de-toalhas-banho','Jogo de toalhas de banho','Felpudas, macias e daquelas que abraçam depois do banho. Um jogo completo pra sair da água direto pro conforto.','casa',false,20000,1,'{"https://images.unsplash.com/photo-1639298109207-5a9ccc254481?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1760722974657-f64bce2f9cc5?w=1200&q=80&auto=format&fit=crop"}',20),
+('jogo-de-facas','Jogo de facas / cutelaria','Lâminas afiadas de aço inox com suporte — pra picar, fatiar e cortar como gente grande na cozinha nova. Chega de faca cega emprestada.','cozinha',false,20000,1,'{"https://images.unsplash.com/photo-1636412191749-53d84f5f3eb0?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1577398628388-516477602b3b?w=1200&q=80&auto=format&fit=crop"}',21)
+on conflict (slug) do nothing;
