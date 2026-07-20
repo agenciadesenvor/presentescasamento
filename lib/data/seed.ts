@@ -265,6 +265,24 @@ const RAW: SeedGift[] = [
     sortOrder: 16,
     active: true,
   },
+  {
+    id: "aspirador-portatil",
+    slug: "aspirador-portatil",
+    title: "Aspirador de pó portátil",
+    description:
+      "Pra dar aquela geral rapidinho sem arrastar mangueira pela casa toda — leve, sem fio e sempre à mão pra deixar o cantinho novo impecável.",
+    category: "casa",
+    isFun: false,
+    cotaPrice: 25000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1746645297698-306ef29852ca"),
+      IMG("photo-1569698134101-f15cde5cd66c"),
+    ],
+    sortOrder: 17,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
