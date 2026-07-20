@@ -276,10 +276,7 @@ const RAW: SeedGift[] = [
     cotaPrice: 25000,
     totalCotas: 1,
     cotasSold: 0,
-    photos: [
-      IMG("photo-1746645297698-306ef29852ca"),
-      IMG("photo-1569698134101-f15cde5cd66c"),
-    ],
+    photos: ["/gifts/aspirador-portatil.jpg"],
     sortOrder: 17,
     active: true,
   },
