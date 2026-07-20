@@ -280,6 +280,24 @@ const RAW: SeedGift[] = [
     sortOrder: 17,
     active: true,
   },
+  {
+    id: "kit-panelas-inox",
+    slug: "kit-panelas-inox",
+    title: "Kit de panelas inox",
+    description:
+      "Aço inox de verdade, com fundo triplo pra distribuir o calor por igual — do arroz de todo dia ao jantar especial. O tipo de kit que dura o casamento inteiro (e olha que é pra durar bastante).",
+    category: "cozinha",
+    isFun: false,
+    cotaPrice: 55000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1604414499020-f9ac575bc5ec"),
+      IMG("photo-1511224931379-b4e4324ea7fc"),
+    ],
+    sortOrder: 18,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
