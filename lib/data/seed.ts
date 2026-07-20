@@ -243,7 +243,7 @@ const RAW: SeedGift[] = [
       "Pra dar fim aos restos de comida direto na pia, sem entupimento e sem aquela discussão de quem limpa. Praticidade que a cozinha nova merece.",
     category: "cozinha",
     isFun: false,
-    cotaPrice: 15000,
+    cotaPrice: 22000,
     totalCotas: 1,
     cotasSold: 0,
     photos: ["/gifts/triturador-1.jpg", "/gifts/triturador-2.jpg"],
