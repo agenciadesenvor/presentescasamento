@@ -360,7 +360,7 @@ const RAW: SeedGift[] = [
       "Subir o Cerro San Cristóbal de teleférico e ver Santiago inteirinha aos pés, com a Cordilheira dos Andes ao fundo. Passeio guiado com teleférico + funicular — a vista mais bonita da cidade.",
     category: "lua_de_mel",
     isFun: false,
-    cotaPrice: 30000,
+    cotaPrice: 25000,
     totalCotas: 1,
     cotasSold: 0,
     photos: [
@@ -378,7 +378,7 @@ const RAW: SeedGift[] = [
       "Fim de tarde entre as parreiras: degustação de vinhos premium, tábua de queijos e um jantar vendo o sol se pôr sobre os Andes. A experiência de enoturismo mais romântica do roteiro, com transfer incluído.",
     category: "lua_de_mel",
     isFun: false,
-    cotaPrice: 64000,
+    cotaPrice: 30000,
     totalCotas: 1,
     cotasSold: 0,
     photos: [
@@ -386,6 +386,42 @@ const RAW: SeedGift[] = [
       IMG("photo-1567072629554-20e689de2400"),
     ],
     sortOrder: 23,
+    active: true,
+  },
+  {
+    id: "jantar-no-chile",
+    slug: "jantar-no-chile",
+    title: "Um jantar romântico no Chile",
+    description:
+      "Uma noite só de vocês dois no Chile: mesa reservada, brinde com vinho chileno e aquele jantar que fecha a lua de mel com chave de ouro.",
+    category: "lua_de_mel",
+    isFun: false,
+    cotaPrice: 30000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1731941465921-eb4285693713"),
+      IMG("photo-1706586346290-68657e61cfc4"),
+    ],
+    sortOrder: 24,
+    active: true,
+  },
+  {
+    id: "jantar-em-sao-paulo",
+    slug: "jantar-em-sao-paulo",
+    title: "Um jantar a dois em São Paulo",
+    description:
+      "Pra provar que casado também namora: um jantar a dois em São Paulo, longe da pia e da Netflix. Romance renovado — e ninguém lava a louça depois.",
+    category: "divertidas",
+    isFun: true,
+    cotaPrice: 25000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1414235077428-338989a2e8c0"),
+      IMG("photo-1723132688333-83018f3560be"),
+    ],
+    sortOrder: 25,
     active: true,
   },
 ];
