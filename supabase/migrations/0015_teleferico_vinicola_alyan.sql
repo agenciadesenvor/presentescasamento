@@ -1,0 +1,6 @@
+-- Passeios de lua de mel no Chile: Teleférico de Santiago (R$ 300) e
+-- Vinícola Alyan Sunset (R$ 640). Presente único.
+insert into public.gifts (slug, title, description, category, is_fun, cota_price, total_cotas, photos, sort_order) values
+('teleferico-santiago','Teleférico de Santiago','Subir o Cerro San Cristóbal de teleférico e ver Santiago inteirinha aos pés, com a Cordilheira dos Andes ao fundo. Passeio guiado com teleférico + funicular — a vista mais bonita da cidade.','lua_de_mel',false,30000,1,'{"https://images.unsplash.com/photo-1755314704731-0b9e15c0c269?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1693643210415-195688c860f8?w=1200&q=80&auto=format&fit=crop"}',22),
+('vinicola-alyan','Vinícola Alyan (Sunset)','Fim de tarde entre as parreiras: degustação de vinhos premium, tábua de queijos e um jantar vendo o sol se pôr sobre os Andes. A experiência de enoturismo mais romântica do roteiro, com transfer incluído.','lua_de_mel',false,64000,1,'{"https://images.unsplash.com/photo-1662624335971-57960e9e669f?w=1200&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1567072629554-20e689de2400?w=1200&q=80&auto=format&fit=crop"}',23)
+on conflict (slug) do nothing;

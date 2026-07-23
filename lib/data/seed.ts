@@ -352,6 +352,42 @@ const RAW: SeedGift[] = [
     sortOrder: 21,
     active: true,
   },
+  {
+    id: "teleferico-santiago",
+    slug: "teleferico-santiago",
+    title: "Teleférico de Santiago",
+    description:
+      "Subir o Cerro San Cristóbal de teleférico e ver Santiago inteirinha aos pés, com a Cordilheira dos Andes ao fundo. Passeio guiado com teleférico + funicular — a vista mais bonita da cidade.",
+    category: "lua_de_mel",
+    isFun: false,
+    cotaPrice: 30000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1755314704731-0b9e15c0c269"),
+      IMG("photo-1693643210415-195688c860f8"),
+    ],
+    sortOrder: 22,
+    active: true,
+  },
+  {
+    id: "vinicola-alyan",
+    slug: "vinicola-alyan",
+    title: "Vinícola Alyan (Sunset)",
+    description:
+      "Fim de tarde entre as parreiras: degustação de vinhos premium, tábua de queijos e um jantar vendo o sol se pôr sobre os Andes. A experiência de enoturismo mais romântica do roteiro, com transfer incluído.",
+    category: "lua_de_mel",
+    isFun: false,
+    cotaPrice: 64000,
+    totalCotas: 1,
+    cotasSold: 0,
+    photos: [
+      IMG("photo-1662624335971-57960e9e669f"),
+      IMG("photo-1567072629554-20e689de2400"),
+    ],
+    sortOrder: 23,
+    active: true,
+  },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
