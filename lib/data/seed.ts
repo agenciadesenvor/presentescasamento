@@ -364,7 +364,7 @@ const RAW: SeedGift[] = [
     totalCotas: 1,
     cotasSold: 0,
     photos: [
-      IMG("photo-1755314704731-0b9e15c0c269"),
+      "/gifts/teleferico-santiago.jpg",
       IMG("photo-1693643210415-195688c860f8"),
     ],
     sortOrder: 22,
@@ -382,7 +382,7 @@ const RAW: SeedGift[] = [
     totalCotas: 1,
     cotasSold: 0,
     photos: [
-      IMG("photo-1662624335971-57960e9e669f"),
+      "/gifts/vinicola-alyan.jpg",
       IMG("photo-1567072629554-20e689de2400"),
     ],
     sortOrder: 23,
