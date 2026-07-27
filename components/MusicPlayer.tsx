@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Music, Pause, SkipForward } from "lucide-react";
 
 const tracks = [
-  { title: "The Scientist", src: "/music/the-scientist.mp3" },
   { title: "Marry You", src: "/music/marry-you.mp3" },
   { title: "Lifetime", src: "/music/lifetime.mp3" },
   { title: "A Tu Lado", src: "/music/a-tu-lado.mp3" },
