@@ -70,6 +70,7 @@ export async function getGiftBySlug(slug: string): Promise<Gift | null> {
     .from("gifts_public")
     .select("*")
     .eq("slug", slug)
+    .eq("active", true)
     .maybeSingle();
 
   if (error || !data) return null;

@@ -74,7 +74,7 @@ const RAW: SeedGift[] = [
       IMG("photo-1610041321327-b794c052db27"),
     ],
     sortOrder: 3,
-    active: true,
+    active: false, // removido do site (soft-delete: há compra paga real)
   },
   {
     id: "pilates-da-noiva",
