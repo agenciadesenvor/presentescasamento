@@ -48,7 +48,7 @@ const RAW: SeedGift[] = [
       "Pra ele lembrar que ainda tem sonhos mesmo depois de casado. Cada cota quita uma parcela rumo ao console — e a noiva finge que não viu.",
     category: "divertidas",
     isFun: true,
-    cotaPrice: 20000,
+    cotaPrice: 25000,
     totalCotas: 10,
     cotasSold: 3,
     photos: [
