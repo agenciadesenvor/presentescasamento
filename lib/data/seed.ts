@@ -79,12 +79,12 @@ const RAW: SeedGift[] = [
   {
     id: "pilates-da-noiva",
     slug: "pilates-da-noiva",
-    title: "2 sessões de pilates pra noiva",
+    title: "1 mês de pilates pra noiva",
     description:
-      "Pra ela aguentar firme o peso de estar sempre certa (e ela está). Cada cota são duas aulas de alongamento, equilíbrio e paciência reforçada.",
+      "Um mês inteiro de pilates pra noiva alongar o corpo e a paciência. Cada cota é mais equilíbrio — e menos surto pré-casamento.",
     category: "divertidas",
     isFun: true,
-    cotaPrice: 16000,
+    cotaPrice: 22000,
     totalCotas: 10,
     cotasSold: 1,
     photos: [
@@ -146,7 +146,7 @@ const RAW: SeedGift[] = [
       IMG("photo-1715356758153-6d58ae44e8fe"),
     ],
     sortOrder: 9,
-    active: true,
+    active: false, // removido do site
   },
   {
     id: "ingresso-do-corinthians",
@@ -391,12 +391,12 @@ const RAW: SeedGift[] = [
   {
     id: "jantar-no-chile",
     slug: "jantar-no-chile",
-    title: "Um jantar romântico no Chile",
+    title: "Experiência no restaurante Amor y Pasta (Chile)",
     description:
-      "Uma noite só de vocês dois no Chile: mesa reservada, brinde com vinho chileno e aquele jantar que fecha a lua de mel com chave de ouro.",
+      "Uma noite especial num dos restaurantes mais charmosos de Santiago: massas artesanais, vinho chileno e clima romântico. O jantar perfeito da lua de mel.",
     category: "lua_de_mel",
     isFun: false,
-    cotaPrice: 30000,
+    cotaPrice: 40000,
     totalCotas: 1,
     cotasSold: 0,
     photos: [
@@ -424,6 +424,33 @@ const RAW: SeedGift[] = [
     sortOrder: 25,
     active: true,
   },
+  // Lote de cotas divertidas / contribuição (placeholder emoji da marca).
+  { id: "perguntar-quando-filhos", slug: "perguntar-quando-filhos", title: "Cota para perguntar quando terão filhos", description: "Aquela pergunta que todo parente adora soltar no casamento. Cada cota dá o direito de perguntar quando vêm os filhos — e ver os noivos rindo sem graça.", category: "divertidas", isFun: true, cotaPrice: 9000, totalCotas: 1, cotasSold: 0, photos: ["emoji:👶"], sortOrder: 26, active: true },
+  { id: "proteger-tpm-noivo", slug: "proteger-tpm-noivo", title: "Ajude o noivo a se proteger da TPM da noiva", description: "Kit de sobrevivência do marido: chocolate, paciência e um bom fone de ouvido. Cada cota garante mais uns dias de paz no lar.", category: "divertidas", isFun: true, cotaPrice: 10000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🛡️"], sortOrder: 27, active: true },
+  { id: "mes-de-aluguel", slug: "mes-de-aluguel", title: "Um mês de aluguel para os noivos", description: "Um empurrãozinho generoso pra deixar o começo da vida a dois mais leve. Cada cota é um pedaço do teto sobre a cabeça do casal.", category: "casa", isFun: false, cotaPrice: 80000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🏠"], sortOrder: 28, active: true },
+  { id: "apenas-uma-lembrancinha", slug: "apenas-uma-lembrancinha", title: "Apenas uma lembrancinha", description: "Sem motivo e sem desculpa: só um miminho pra dizer que você está torcendo por eles. Simples e do coração.", category: "divertidas", isFun: true, cotaPrice: 12000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🎀"], sortOrder: 29, active: true },
+  { id: "cafe-da-manha-lua-de-mel", slug: "cafe-da-manha-lua-de-mel", title: "Café da manhã farto na lua de mel", description: "Pra começar cada dia da viagem com mesa cheia: pães quentinhos, frutas, sucos e um bom café a dois.", category: "lua_de_mel", isFun: false, cotaPrice: 17000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🥐"], sortOrder: 30, active: true },
+  { id: "camisa-de-forca-noiva", slug: "camisa-de-forca-noiva", title: "Camisa de força pra noiva não surtar até o casamento", description: "Organizar casamento é esporte radical. Cada cota ajuda a manter a noiva (quase) sã até a hora do sim.", category: "divertidas", isFun: true, cotaPrice: 30000, totalCotas: 1, cotasSold: 0, photos: ["emoji:😵‍💫"], sortOrder: 31, active: true },
+  { id: "contribuicao-bondosa", slug: "contribuicao-bondosa", title: "Contribuição bondosa", description: "Pra quem quer ajudar com carinho e sem complicação. Um gesto bondoso que os noivos guardam no coração.", category: "divertidas", isFun: true, cotaPrice: 35000, totalCotas: 1, cotasSold: 0, photos: ["emoji:😇"], sortOrder: 32, active: true },
+  { id: "contribuicao-generosa-lua-de-mel", slug: "contribuicao-generosa-lua-de-mel", title: "Contribuição generosa para a lua de mel", description: "Pra lua de mel dos sonhos ficar ainda mais inesquecível. Cada cota é um brinde à viagem da vida deles.", category: "lua_de_mel", isFun: false, cotaPrice: 120000, totalCotas: 1, cotasSold: 0, photos: ["emoji:💸"], sortOrder: 33, active: true },
+  { id: "amigos-para-sempre", slug: "amigos-para-sempre", title: "Cota amigos para sempre", description: "Porque amizade de verdade a gente leva pra vida toda. Cada cota reserva seu lugar cativo na história do casal.", category: "divertidas", isFun: true, cotaPrice: 37000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🤝"], sortOrder: 34, active: true },
+  { id: "jogar-buque", slug: "jogar-buque", title: "Cota pra noiva jogar o buquê na sua direção", description: "Quer ser o próximo da fila? Cada cota aumenta misteriosamente suas chances de pegar o buquê no ar.", category: "divertidas", isFun: true, cotaPrice: 25000, totalCotas: 1, cotasSold: 0, photos: ["emoji:💐"], sortOrder: 35, active: true },
+  { id: "almoco-romantico", slug: "almoco-romantico", title: "Almoço romântico para os noivos", description: "Um almoço a dois sem pressa, pra celebrar o amor num dia comum. Romance servido à mesa.", category: "divertidas", isFun: true, cotaPrice: 47000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🍽️"], sortOrder: 36, active: true },
+  { id: "proxima-a-casar", slug: "proxima-a-casar", title: "Cota para ser a próxima a casar", description: "Dizem que casamento chama casamento. Cada cota reserva seu lugar na fila do próximo sim.", category: "divertidas", isFun: true, cotaPrice: 18000, totalCotas: 1, cotasSold: 0, photos: ["emoji:💍"], sortOrder: 37, active: true },
+  { id: "tia-preferida", slug: "tia-preferida", title: "Cota pra ser a tia preferida dos futuros filhos", description: "A disputa começou cedo! Cada cota dá pontos extras na corrida por tio ou tia favorito da criançada que vem por aí.", category: "divertidas", isFun: true, cotaPrice: 80000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🧸"], sortOrder: 38, active: true },
+  { id: "deus-te-iluminou", slug: "deus-te-iluminou", title: "Deus te iluminou hoje, seja generoso", description: "Um convite carinhoso pra abençoar o começo dessa nova família com generosidade. Que volte em dobro pra você.", category: "divertidas", isFun: true, cotaPrice: 100000, totalCotas: 1, cotasSold: 0, photos: ["emoji:✨"], sortOrder: 39, active: true },
+  { id: "escolher-musica-casamento", slug: "escolher-musica-casamento", title: "Escolha uma música pra tocar no casamento", description: "Tem aquela música que combina com o casal? Cada cota garante um pedido especial na trilha sonora da festa.", category: "divertidas", isFun: true, cotaPrice: 20000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🎶"], sortOrder: 40, active: true },
+  { id: "ir-na-lua-de-mel", slug: "ir-na-lua-de-mel", title: "Ir com os noivos para a lua de mel", description: "A cota mais ousada da lista! Faz as malas que... é brincadeira. Ou não. Pra quem topa qualquer perrengue chique.", category: "divertidas", isFun: true, cotaPrice: 325000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🧳"], sortOrder: 41, active: true },
+  { id: "levar-nao-convidado", slug: "levar-nao-convidado", title: "Levar alguém que não foi convidado pro casamento", description: "Aquele acompanhante surpresa? Só liberado com esta cota especialíssima (e olha que ela não é nada barata).", category: "divertidas", isFun: true, cotaPrice: 500000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🕵️"], sortOrder: 42, active: true },
+  { id: "cantar-com-a-banda", slug: "cantar-com-a-banda", title: "Subir no palco e cantar com a banda do casamento", description: "Seu momento popstar chegou! Cada cota libera o microfone pra você soltar a voz com a banda na festa.", category: "divertidas", isFun: true, cotaPrice: 21000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🎤"], sortOrder: 43, active: true },
+  { id: "look-novo-lua-de-mel", slug: "look-novo-lua-de-mel", title: "Look novo pra usar na lua de mel", description: "Pra desfilar bonito nas fotos da viagem. Cada cota ajuda a montar aquele look de arrasar na lua de mel.", category: "lua_de_mel", isFun: false, cotaPrice: 15000, totalCotas: 1, cotasSold: 0, photos: ["emoji:👗"], sortOrder: 44, active: true },
+  { id: "padrinhos-favoritos", slug: "padrinhos-favoritos", title: "Padrinhos favoritos dos noivos", description: "Título disputadíssimo! Cada cota rende pontos na corrida pelo posto de padrinho ou madrinha número um do casal.", category: "divertidas", isFun: true, cotaPrice: 80000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🤵"], sortOrder: 45, active: true },
+  { id: "so-pra-dizer-que-nao-dei-nada", slug: "so-pra-dizer-que-nao-dei-nada", title: "Só pra dizer que não dei nada", description: "A cota mais sincera de todas: você deu (a gente sabe), e agora pode dizer por aí que não deu nada.", category: "divertidas", isFun: true, cotaPrice: 10000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🙃"], sortOrder: 46, active: true },
+  { id: "mes-de-faxina", slug: "mes-de-faxina", title: "Um mês de faxina pra noiva descansar", description: "Um mês sem esfregar chão nem lavar louça. Cada cota é uma folga bem merecida pra noiva colocar os pés pra cima.", category: "divertidas", isFun: true, cotaPrice: 40000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🧹"], sortOrder: 47, active: true },
+  { id: "lava-e-seca", slug: "lava-e-seca", title: "Um lava e seca pra não sofrer mais lavando roupa", description: "Chega de estender roupa e rezar pra não chover. Cada cota aproxima o casal da vida moderna: lava, seca e pronto.", category: "casa", isFun: false, cotaPrice: 178000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🧺"], sortOrder: 48, active: true },
+  { id: "vale-passeio-chile", slug: "vale-passeio-chile", title: "Vale passeio no Chile", description: "Um vale livre pra escolher aquele passeio especial na lua de mel chilena. Aventura garantida nos Andes.", category: "lua_de_mel", isFun: false, cotaPrice: 34000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🎫"], sortOrder: 49, active: true },
+  { id: "passeio-costanera", slug: "passeio-costanera", title: "Passeio na Costanera (Chile)", description: "Subir ao topo do Sky Costanera, o prédio mais alto da América do Sul, e ver Santiago inteira com os Andes ao fundo.", category: "lua_de_mel", isFun: false, cotaPrice: 15000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🌇"], sortOrder: 50, active: true },
+  { id: "fundo-emergencial-tpm", slug: "fundo-emergencial-tpm", title: "Fundo Emergencial para TPM da noiva", description: "Reserva estratégica de chocolate, sorvete e paz. Pra acionar nos dias em que o mundo precisa recuar um pouquinho.", category: "divertidas", isFun: true, cotaPrice: 10000, totalCotas: 1, cotasSold: 0, photos: ["emoji:🍫"], sortOrder: 51, active: true },
 ];
 
 export const SEED_GIFTS: Gift[] = RAW.map((g) => ({
