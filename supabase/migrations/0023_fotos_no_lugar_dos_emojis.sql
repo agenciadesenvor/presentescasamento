@@ -1,0 +1,27 @@
+-- Troca os placeholders emoji: por fotos reais do Unsplash (validadas HTTP 200).
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1513091250092-b06c2b7981bc?w=1200&q=80&auto=format&fit=crop"}' where slug = 'perguntar-quando-filhos';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1758524571571-7c5948a0ec45?w=1200&q=80&auto=format&fit=crop"}' where slug = 'proteger-tpm-noivo';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format&fit=crop"}' where slug = 'mes-de-aluguel';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=1200&q=80&auto=format&fit=crop"}' where slug = 'apenas-uma-lembrancinha';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?w=1200&q=80&auto=format&fit=crop"}' where slug = 'cafe-da-manha-lua-de-mel';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=1200&q=80&auto=format&fit=crop"}' where slug = 'camisa-de-forca-noiva';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1579208570378-8c970854bc23?w=1200&q=80&auto=format&fit=crop"}' where slug = 'contribuicao-bondosa';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1633158829875-e5316a358c6f?w=1200&q=80&auto=format&fit=crop"}' where slug = 'contribuicao-generosa-lua-de-mel';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1771395834098-ded1cc2b297c?w=1200&q=80&auto=format&fit=crop"}' where slug = 'amigos-para-sempre';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1521543832500-49e69fb2bea2?w=1200&q=80&auto=format&fit=crop"}' where slug = 'jogar-buque';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1627941433145-3ca08bb930f5?w=1200&q=80&auto=format&fit=crop"}' where slug = 'almoco-romantico';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80&auto=format&fit=crop"}' where slug = 'proxima-a-casar';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1602734846297-9299fc2d4703?w=1200&q=80&auto=format&fit=crop"}' where slug = 'tia-preferida';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1513069020900-a162c4db0762?w=1200&q=80&auto=format&fit=crop"}' where slug = 'deus-te-iluminou';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1616714109948-c74fe5029a4d?w=1200&q=80&auto=format&fit=crop"}' where slug = 'escolher-musica-casamento';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1502301197179-65228ab57f78?w=1200&q=80&auto=format&fit=crop"}' where slug = 'ir-na-lua-de-mel';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1783633620305-8f50b99cfba3?w=1200&q=80&auto=format&fit=crop"}' where slug = 'levar-nao-convidado';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1507676385008-e7fb562d11f8?w=1200&q=80&auto=format&fit=crop"}' where slug = 'cantar-com-a-banda';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1540221652346-e5dd6b50f3e7?w=1200&q=80&auto=format&fit=crop"}' where slug = 'look-novo-lua-de-mel';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1694394181749-50dcca5463d7?w=1200&q=80&auto=format&fit=crop"}' where slug = 'padrinhos-favoritos';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1785835181295-7f3357174da5?w=1200&q=80&auto=format&fit=crop"}' where slug = 'so-pra-dizer-que-nao-dei-nada';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1563453392212-326f5e854473?w=1200&q=80&auto=format&fit=crop"}' where slug = 'mes-de-faxina';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=1200&q=80&auto=format&fit=crop"}' where slug = 'lava-e-seca';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1689850543263-01a52ccc6943?w=1200&q=80&auto=format&fit=crop"}' where slug = 'vale-passeio-chile';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1566079463188-97d2f1352582?w=1200&q=80&auto=format&fit=crop"}' where slug = 'passeio-costanera';
+update public.gifts set photos = '{"https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=1200&q=80&auto=format&fit=crop"}' where slug = 'fundo-emergencial-tpm';
