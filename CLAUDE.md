@@ -15,7 +15,7 @@ contagem regressiva e mural de recados.
 ## Stack
 
 - **Next.js 16** (App Router, TypeScript) + **Tailwind CSS v3**
-- **Supabase** (Postgres, Auth, Storage) — projeto **compartilhado** `qggiltvexcnwkvirduhw` ("agenciadesenvor's Project")
+- **Supabase** (Postgres, Auth, Storage) — projeto **dedicado** `xkwftmnhytotabyzblmt` ("Site Casamento"). (Migrado em 22/08/2026 do projeto compartilhado `qggiltvexcnwkvirduhw`, que NÃO é mais usado pelo site.)
 - **Mercado Pago** (Checkout Pro + webhook) — **em produção** (conta real, PIX ativo)
 - **Vercel** (hospedagem) + **framer-motion** (animações) + **lucide-react** (ícones)
 
@@ -33,7 +33,7 @@ Sempre ≥ Next 16 — a Vercel **bloqueia** versões vulneráveis do Next.
 ## Arquitetura / convenções IMPORTANTES
 
 - **O site é DB-driven.** Os presentes vêm do Supabase em runtime (`lib/data/gifts.ts`, páginas com `export const dynamic = "force-dynamic"`). O `lib/data/seed.ts` é só **fallback de demonstração** (quando não há env vars). Mudança no banco reflete no ar **na hora** (sem deploy).
-- **Todo acesso ao banco é via `service_role` no servidor** (`createAdminClient`, `lib/supabase/admin.ts`). O RLS está **fechado** (tabelas sem política para anon/authenticated) — nunca exponha service_role ao cliente. Isso é importante porque o projeto Supabase é compartilhado com outros sistemas.
+- **Todo acesso ao banco é via `service_role` no servidor** (`createAdminClient`, `lib/supabase/admin.ts`). O RLS está **fechado** (tabelas sem política para anon/authenticated) — nunca exponha service_role ao cliente.
 - **Segredos** ficam SÓ em `.env.local` (gitignored) e nas **env vars da Vercel** (produção). Nunca comitar.
 - **Admin** (`/admin`) é restrito por e-mail via env `ADMIN_EMAILS` (`isAdminEmail()` em `lib/supabase/config.ts`).
 - **Paleta de marca** (Tailwind): `forest` (verde #374A32), `mocha` (marrom #69452D), `cream` (off-white #FFFBF8), `stone` (cinza). Fontes: Playfair (serif) + Inter (sans). NÃO existem cores `coral`/`sage` (foram renomeadas).
