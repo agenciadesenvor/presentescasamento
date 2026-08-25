@@ -62,7 +62,8 @@ export default function MusicPlayer() {
   }
 
   return (
-    <div className="pointer-events-none fixed bottom-5 left-4 z-40 sm:left-5">
+    // No mobile a navbar fica no rodapé — bottom-24 sobe o player pra não ficar atrás dela.
+    <div className="pointer-events-none fixed bottom-24 left-4 z-40 sm:bottom-5 sm:left-5">
       <audio
         ref={audioRef}
         src={tracks[current].src}
