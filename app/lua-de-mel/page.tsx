@@ -7,149 +7,175 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const IMG = (id: string) =>
+  `https://images.unsplash.com/${id}?w=1600&q=80&auto=format&fit=crop`;
+
+type Atividade = { hora?: string; texto: string };
+
 type Dia = {
-  numero: string;
+  badge: string;
   titulo: string;
-  emoji: string;
-  descricao: string;
-  detalhes?: string[];
+  fotos: string[];
+  atividades: Atividade[];
 };
 
-const ROTEIRO: Dia[] = [
+const DIAS: Dia[] = [
   {
-    numero: "Dia 1",
-    titulo: "Chegada em Santiago",
-    emoji: "✈️",
-    descricao:
-      "Voo, check-in no hotel e aquele primeiro passeio sem pressa pra sentir o clima da cidade.",
-    detalhes: [
-      "Caminhada pelo bairro Lastarria",
-      "Jantar leve e taça de vinho pra abrir a viagem",
+    badge: "Seg · 26/10",
+    titulo: "Chegada + Liberdade",
+    fotos: [IMG("photo-1617870314635-fc819547ec11")],
+    atividades: [
+      { hora: "7h25", texto: "Chegada em GRU" },
+      { texto: "Ir pro hotel na República e deixar as malas" },
+      { texto: "Café da manhã / brunch no Café Station, na Liberdade" },
+      {
+        texto:
+          "Praça da Liberdade, Rua Galvão Bueno, lojinhas e mercados orientais",
+      },
+      { texto: "Almoço na Liberdade" },
+      { hora: "15h", texto: "Check-in no hotel" },
+      { texto: "Noite leve: jantar perto da República ou Santa Cecília" },
     ],
   },
   {
-    numero: "Dia 2",
-    titulo: "Cerro San Cristóbal",
-    emoji: "🚡",
-    descricao:
-      "Subida de teleférico + funicular até o alto do Parque Metropolitano — Santiago inteira aos nossos pés.",
-    detalhes: [
-      "Teleférico + funicular (presente dos nossos convidados 🤎)",
-      "Vista da Virgem no topo e piquenique no parque",
+    badge: "Ter · 27/10",
+    titulo: "Centro histórico + Paulista",
+    fotos: [IMG("photo-1637028330542-4c27164165f4")],
+    atividades: [
+      {
+        hora: "Manhã",
+        texto:
+          "Theatro Municipal, Viaduto do Chá, Mosteiro de São Bento e Farol Santander",
+      },
+      { texto: "Almoço no Centro ou Mercado Municipal" },
+      { hora: "Tarde", texto: "Avenida Paulista + MASP" },
+      { texto: "Jantar na Paulista/Jardins ou volta pra República" },
     ],
   },
   {
-    numero: "Dia 3",
-    titulo: "Sky Costanera",
-    emoji: "🌇",
-    descricao:
-      "Café da manhã farto e, no fim da tarde, o pôr do sol do topo do prédio mais alto da América do Sul.",
-    detalhes: [
-      "Café da manhã reforçado no hotel",
-      "Sky Costanera ao entardecer — luzes da cidade acendendo",
+    badge: "Qua · 28/10",
+    titulo: "Ibirapuera + Corinthians",
+    fotos: [
+      IMG("photo-1605050851738-78b9459d1c4c"),
+      "/gifts/neo-quimica-arena-1.jpg",
     ],
-  },
-  {
-    numero: "Dia 4",
-    titulo: "Vinícola Alyan — Sunset",
-    emoji: "🍷",
-    descricao:
-      "Fim de tarde entre parreiras: degustação de vinhos premium, tábua de queijos e jantar vendo o sol se pôr sobre os Andes.",
-    detalhes: [
-      "Transfer incluído, tour guiado em português",
-      "Brinde ao pôr do sol 🥂",
-    ],
-  },
-  {
-    numero: "Dia 5",
-    titulo: "Embalse el Yeso + Termas da Colina",
-    emoji: "🏔️",
-    descricao:
-      "Dia inteiro nos Andes: o azul irreal da represa e depois o relaxamento nas águas termais naturais.",
-    detalhes: [
-      "Cajón del Maipo no caminho",
-      "Café da manhã e roupão personalizado inclusos",
-    ],
-  },
-  {
-    numero: "Dia 6",
-    titulo: "Portillo e Laguna del Inca",
-    emoji: "⛷️",
-    descricao:
-      "O centro de esqui mais antigo do Hemisfério Sul, a 2.600m, com a lagoa azul-turquesa que dá nome ao passeio.",
-    detalhes: [
-      "Tour guiado com coquetel a bordo",
-      "Muitas fotos dignas de moldura 📸",
-    ],
-  },
-  {
-    numero: "Dia 7",
-    titulo: "Último dia — Amor y Pasta",
-    emoji: "🍝",
-    descricao:
-      "Manhã livre pra compras e lembrancinhas, e à noite o jantar de despedida no restaurante mais charmoso de Santiago.",
-    detalhes: [
-      "Compras no centro / feirinhas",
-      "Jantar no Amor y Pasta pra fechar com chave de ouro",
+    atividades: [
+      { hora: "Manhã", texto: "Parque Ibirapuera" },
+      {
+        texto:
+          "Caminhada pelo lago, Marquise, Monumento às Bandeiras e entorno do Auditório",
+      },
+      { texto: "Almoço leve" },
+      { texto: "Voltar ao hotel pra descansar" },
+      {
+        hora: "Noite",
+        texto: "Corinthians x Mirassol, na Neo Química Arena 🖤🤍",
+      },
+      { texto: "Ir de metrô pela Linha 3-Vermelha até Corinthians-Itaquera" },
     ],
   },
 ];
 
+const NOTAS = [
+  "Paulista fica na terça porque muita coisa fecha na segunda.",
+  "Não vale encaixar tour/museu da arena no dia do jogo.",
+  "Pro jogo, sair da República com 2h a 2h30 de antecedência.",
+];
+
 export default function LuaDeMelPage() {
   return (
-    <main className="min-h-screen bg-cream-100">
-      <header className="bg-forest-600 px-6 pb-14 pt-16 text-center">
-        <Image
-          src="/hero-monograma.svg"
-          alt="Monograma Elison & Patrícia"
-          width={90}
-          height={83}
-          className="mx-auto"
-        />
-        <h1 className="mt-6 font-serif text-3xl text-cream-100 sm:text-4xl">
-          Nossa Lua de Mel
+    <main className="min-h-screen bg-cream-50 pb-16">
+      <header className="mx-auto max-w-3xl px-5 pb-2 pt-10 sm:pt-14">
+        <p className="text-xs font-semibold uppercase tracking-widest text-mocha-400">
+          Nossa lua de mel · página só nossa 🤫
+        </p>
+        <h1 className="mt-2 font-serif text-3xl text-ink sm:text-5xl">
+          Roteiro São Paulo
         </h1>
-        <p className="mt-2 text-sm text-forest-100 sm:text-base">
-          Santiago do Chile 🇨🇱 · primavera nos Andes
-        </p>
-        <p className="mx-auto mt-4 max-w-md text-xs text-forest-200">
-          Página só nossa 🤫 — o roteirinho do começo da nossa próxima fase.
-        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span className="rounded-full border border-cream-200 bg-white px-4 py-1.5 text-xs font-medium text-ink shadow-card">
+            📅 26 a 28 de outubro
+          </span>
+          <span className="rounded-full border border-cream-200 bg-white px-4 py-1.5 text-xs font-medium text-ink shadow-card">
+            🏨 Hotel na República
+          </span>
+          <span className="rounded-full border border-cream-200 bg-white px-4 py-1.5 text-xs font-medium text-ink shadow-card">
+            🚇 Rolês de metrô
+          </span>
+        </div>
       </header>
 
-      <section className="container-page mx-auto max-w-2xl px-6 py-12">
-        <ol className="relative space-y-8 border-l-2 border-forest-200 pl-6">
-          {ROTEIRO.map((dia) => (
-            <li key={dia.numero} className="relative">
-              <span className="absolute -left-[37px] grid h-9 w-9 place-items-center rounded-full border-2 border-forest-200 bg-cream-50 text-base">
-                {dia.emoji}
+      <section className="mx-auto max-w-3xl space-y-8 px-5 pt-8">
+        {DIAS.map((dia) => (
+          <article
+            key={dia.badge}
+            className="overflow-hidden rounded-3xl border border-cream-200 bg-white shadow-card transition hover:shadow-cardHover"
+          >
+            <div
+              className={`relative grid h-56 sm:h-72 ${
+                dia.fotos.length > 1 ? "grid-cols-2 gap-0.5" : ""
+              }`}
+            >
+              {dia.fotos.map((foto) => (
+                <div key={foto} className="relative">
+                  <Image
+                    src={foto}
+                    alt={dia.titulo}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+              <span className="absolute left-4 top-4 rounded-full bg-white/95 px-4 py-1.5 text-xs font-semibold text-ink shadow-card backdrop-blur">
+                {dia.badge}
               </span>
-              <div className="rounded-xl2 border border-cream-200 bg-white p-5 shadow-card">
-                <p className="text-xs font-medium uppercase tracking-wide text-mocha-400">
-                  {dia.numero}
-                </p>
-                <h2 className="mt-1 font-serif text-xl text-ink">
-                  {dia.titulo}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {dia.descricao}
-                </p>
-                {dia.detalhes && (
-                  <ul className="mt-3 space-y-1">
-                    {dia.detalhes.map((d) => (
-                      <li key={d} className="text-xs text-forest-500">
-                        • {d}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </li>
-          ))}
-        </ol>
+            </div>
+            <div className="p-5 sm:p-7">
+              <h2 className="font-serif text-2xl text-ink">{dia.titulo}</h2>
+              <ul className="mt-4 divide-y divide-cream-200">
+                {dia.atividades.map((a) => (
+                  <li key={a.texto} className="flex items-start gap-3 py-3">
+                    {a.hora ? (
+                      <span className="mt-0.5 shrink-0 rounded-full bg-forest-50 px-2.5 py-0.5 text-[11px] font-semibold text-forest-600">
+                        {a.hora}
+                      </span>
+                    ) : (
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mocha-300" />
+                    )}
+                    <span className="text-sm leading-relaxed text-ink/80">
+                      {a.texto}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
 
-        <p className="mt-12 text-center font-serif text-lg text-mocha-500">
-          A gente, os Andes e o resto da vida pela frente. 🤎
+        <aside className="rounded-3xl border border-forest-100 bg-forest-50 p-5 sm:p-7">
+          <h2 className="font-serif text-xl text-forest-700">📌 Notas</h2>
+          <ul className="mt-3 space-y-2">
+            {NOTAS.map((n) => (
+              <li key={n} className="flex items-start gap-2 text-sm text-forest-600">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-400" />
+                {n}
+              </li>
+            ))}
+          </ul>
+        </aside>
+
+        <aside className="rounded-3xl border-2 border-dashed border-mocha-200 bg-white/60 p-5 text-center sm:p-7">
+          <p className="font-serif text-lg text-mocha-500">
+            Próxima parada: Chile 🇨🇱
+          </p>
+          <p className="mt-1 text-sm text-muted">
+            Roteiro em construção — Santiago que nos aguarde. 🏔️
+          </p>
+        </aside>
+
+        <p className="pt-2 text-center font-serif text-lg text-mocha-500">
+          A gente e o resto da vida pela frente. 🤎
         </p>
       </section>
     </main>

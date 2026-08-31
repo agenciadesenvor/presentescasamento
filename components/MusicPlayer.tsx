@@ -46,8 +46,9 @@ export default function MusicPlayer() {
     }
   }, [current]);
 
-  // Não mostra no painel admin.
-  if (pathname?.startsWith("/admin")) return null;
+  // Não mostra no painel admin nem na página privada do roteiro.
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/lua-de-mel"))
+    return null;
 
   function toggle() {
     const a = audioRef.current;
