@@ -159,6 +159,22 @@ const CHILE: Passeio[] = [
   },
   {
     data: "Dom · 01/11",
+    titulo: "Vinícola Concha y Toro",
+    foto: "/lua-de-mel/concha-y-toro.jpg",
+    alt: "Casona histórica da Viña Concha y Toro, em Pirque",
+    horario: "Horário a definir",
+    precoPendente: true,
+    descricao:
+      "A vinícola mais famosa do Chile, em Pirque: a casona histórica, os jardins, os vinhedos e a lendária adega do Casillero del Diablo.",
+    roteiro: [
+      "Casona e jardins históricos de Pirque",
+      "Passeio pelos vinhedos",
+      "Adega do Casillero del Diablo",
+      "Degustação de vinhos",
+    ],
+  },
+  {
+    data: "Seg · 02/11",
     titulo: "Cajón del Maipo y Embalse + Termas de Colina",
     foto: "/lua-de-mel/embalse-el-yeso.jpg",
     alt: "Embalse El Yeso cercado por montanhas nevadas",
@@ -176,22 +192,6 @@ const CHILE: Passeio[] = [
       "Termas de Colina",
     ],
     incluso: ["Transporte", "Guia", "Piquenique", "Ingresso termas"],
-  },
-  {
-    data: "Seg · 02/11",
-    titulo: "Vinícola Concha y Toro",
-    foto: "/lua-de-mel/concha-y-toro.jpg",
-    alt: "Casona histórica da Viña Concha y Toro, em Pirque",
-    horario: "Horário a definir",
-    precoPendente: true,
-    descricao:
-      "A vinícola mais famosa do Chile, em Pirque: a casona histórica, os jardins, os vinhedos e a lendária adega do Casillero del Diablo.",
-    roteiro: [
-      "Casona e jardins históricos de Pirque",
-      "Passeio pelos vinhedos",
-      "Adega do Casillero del Diablo",
-      "Degustação de vinhos",
-    ],
   },
   {
     data: "Ter · 03/11",
