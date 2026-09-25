@@ -67,6 +67,10 @@
 .ldm .tour-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding-bottom: 14px; border-bottom: 1px solid var(--border); color: #5d635a; font-size: 14px; }
 .ldm .tour-meta svg { color: var(--tour-accent); }
 .ldm .tour-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: #b9b3ad; }
+.ldm .tour-pending { color: var(--tour-accent-dark); font-style: normal; font-weight: 700; }
+.ldm .tour-couple strong.pending, .ldm .budget-values strong.pending { font-size: 15px; font-weight: 700; opacity: .85; }
+.ldm .budget-values strong.pending { color: var(--tour-accent-dark); }
+.ldm .budget-total small.budget-note { color: #d8bea8; font-style: italic; }
 .ldm .tour-price { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
 .ldm .tour-meta strong { color: var(--primary); font-weight: 800; }
 .ldm .tour-couple { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 14px; border-radius: 14px; background: var(--primary); color: var(--primary-foreground); }

@@ -3,6 +3,7 @@ import {
   CalendarDays,
   CircleCheck,
   Clock3,
+  Footprints,
   Heart,
   Info,
   MapPin,
@@ -35,7 +36,10 @@ type Passeio = {
   horario: string;
   /** Preço por pessoa, em reais. O valor do casal é sempre o dobro. */
   precoPessoa?: number;
+  /** Passeio pago cujo valor ainda não foi decidido. */
+  precoPendente?: boolean;
   agencia?: string;
+  porContaPropria?: boolean;
   extra?: string;
   descricao: string;
   roteiro: Parada[];
@@ -173,15 +177,51 @@ const CHILE: Passeio[] = [
     ],
     incluso: ["Transporte", "Guia", "Piquenique"],
   },
+  {
+    data: "Seg · 02/11",
+    titulo: "City Tour em Santiago",
+    foto: "/lua-de-mel/city-tour-santiago.jpg",
+    alt: "Plaza de Armas e a Catedral Metropolitana de Santiago",
+    horario: "Dia inteiro",
+    porContaPropria: true,
+    extra: "Roteiro sugerido: ajustem como quiserem",
+    descricao:
+      "Um dia pra explorar o centro de Santiago no nosso ritmo: praças, palácios, mirantes e comidinhas locais.",
+    roteiro: [
+      ["Manhã", "Plaza de Armas e Catedral Metropolitana"],
+      "Palacio de La Moneda (pátios abertos de seg a sex)",
+      "Cerro Santa Lucía e o mirante do centro",
+      ["Almoço", "Bairro Lastarria"],
+      "Mercado Central",
+      ["Noite", "Jantar em Bellavista"],
+    ],
+  },
+  {
+    data: "Ter · 03/11",
+    titulo: "Vinícola Concha y Toro",
+    foto: "/lua-de-mel/concha-y-toro.jpg",
+    alt: "Casona histórica da Viña Concha y Toro, em Pirque",
+    horario: "Horário a definir",
+    precoPendente: true,
+    descricao:
+      "A vinícola mais famosa do Chile, em Pirque: a casona histórica, os jardins, os vinhedos e a lendária adega do Casillero del Diablo.",
+    roteiro: [
+      "Casona e jardins históricos de Pirque",
+      "Passeio pelos vinhedos",
+      "Adega do Casillero del Diablo",
+      "Degustação de vinhos",
+    ],
+  },
 ];
 
-const PASSEIOS_PAGOS_CHILE = CHILE.filter(
-  (p): p is Passeio & { precoPessoa: number } => p.precoPessoa !== undefined
+const PASSEIOS_COM_VALOR_CHILE = CHILE.filter(
+  (p) => p.precoPessoa !== undefined || p.precoPendente
 );
-const TOTAL_PESSOA_CHILE = PASSEIOS_PAGOS_CHILE.reduce(
-  (soma, p) => soma + p.precoPessoa,
+const TOTAL_PESSOA_CHILE = CHILE.reduce(
+  (soma, p) => soma + (p.precoPessoa ?? 0),
   0
 );
+const TEM_VALOR_PENDENTE_CHILE = CHILE.some((p) => p.precoPendente);
 
 function PasseioCard({ p }: { p: Passeio }) {
   return (
@@ -201,15 +241,35 @@ function PasseioCard({ p }: { p: Passeio }) {
               <strong>{brl(p.precoPessoa)}/pessoa</strong>
             </span>
           )}
+          {p.precoPendente && (
+            <span className="tour-price">
+              <span className="dot" aria-hidden="true" />
+              <em className="tour-pending">Valor a definir</em>
+            </span>
+          )}
         </div>
-        {p.precoPessoa !== undefined && (
+        {(p.precoPessoa !== undefined || p.precoPendente) && (
           <div className="tour-couple">
             <span>
               <Heart size={14} fill="currentColor" aria-hidden="true" /> Valor do
               casal
             </span>
-            <strong>{brl(p.precoPessoa * 2)}</strong>
+            {p.precoPessoa !== undefined ? (
+              <strong>{brl(p.precoPessoa * 2)}</strong>
+            ) : (
+              <strong className="pending">a definir</strong>
+            )}
           </div>
+        )}
+        {p.porContaPropria && (
+          <span className="tour-agency">
+            <span className="tour-agency-icon">
+              <Footprints size={15} aria-hidden="true" />
+            </span>
+            <span>
+              Passeio <strong>por conta própria</strong>
+            </span>
+          </span>
         )}
         {p.agencia && (
           <span className="tour-agency">
@@ -272,7 +332,7 @@ export default function LuaDeMelPage() {
           </span>
         </a>
         <a className="header-pill" href="#roteiro">
-          <CalendarDays size={17} aria-hidden="true" /> 26 out – 01 nov
+          <CalendarDays size={17} aria-hidden="true" /> 26 out – 03 nov
         </a>
       </header>
 
@@ -351,11 +411,11 @@ export default function LuaDeMelPage() {
               <span className="eyebrow">
                 <Mountain size={14} /> capítulo 02
               </span>
-              <h2 id="chile-title">4 dias no Chile</h2>
+              <h2 id="chile-title">{CHILE.length} dias no Chile</h2>
             </div>
             <div className="summary-chips" aria-label="Informações principais">
               <span>
-                <CalendarDays size={16} /> 29 out – 01 nov
+                <CalendarDays size={16} /> 29 out – 03 nov
               </span>
               <span>
                 <MapPin size={16} /> Base: Santiago
@@ -381,17 +441,24 @@ export default function LuaDeMelPage() {
             </div>
 
             <div className="budget-rows">
-              {PASSEIOS_PAGOS_CHILE.map((p) => (
+              {PASSEIOS_COM_VALOR_CHILE.map((p) => (
                 <div className="budget-row" key={p.data}>
                   <div className="budget-info">
                     <span className="budget-date">{p.data}</span>
                     <strong>{p.titulo}</strong>
                     {p.agencia && <small>{p.agencia}</small>}
                   </div>
-                  <div className="budget-values">
-                    <span>{brl(p.precoPessoa)}/pessoa</span>
-                    <strong>{brl(p.precoPessoa * 2)}</strong>
-                  </div>
+                  {p.precoPessoa !== undefined ? (
+                    <div className="budget-values">
+                      <span>{brl(p.precoPessoa)}/pessoa</span>
+                      <strong>{brl(p.precoPessoa * 2)}</strong>
+                    </div>
+                  ) : (
+                    <div className="budget-values">
+                      <span>por pessoa: a definir</span>
+                      <strong className="pending">a definir</strong>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -403,6 +470,11 @@ export default function LuaDeMelPage() {
                   casal
                 </span>
                 <small>{brl(TOTAL_PESSOA_CHILE)} por pessoa</small>
+                {TEM_VALOR_PENDENTE_CHILE && (
+                  <small className="budget-note">
+                    + passeios com valor a definir
+                  </small>
+                )}
               </div>
               <strong>{brl(TOTAL_PESSOA_CHILE * 2)}</strong>
             </div>
@@ -415,8 +487,8 @@ export default function LuaDeMelPage() {
           </div>
           <div className="photo-credits">
             Fotos: Renato S. Rodrigues, Slyronit, Jorge M. Piderit, Pablo
-            Acevedo (CC0), PeladínSinOlfato (CC BY-SA 3.0), Unsplash e acervo
-            Wikimedia Commons.
+            Acevedo (CC0), PeladínSinOlfato (CC BY-SA 3.0), Sfs90 (CC BY-SA 4.0),
+            Apincheira (CC BY-SA 3.0), Unsplash e acervo Wikimedia Commons.
           </div>
         </footer>
       </div>

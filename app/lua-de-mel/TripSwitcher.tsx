@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const CAPITULOS = [
   { id: "roteiro", nome: "São Paulo", datas: "26–28 out" },
-  { id: "chile", nome: "Chile", datas: "29 out – 01 nov" },
+  { id: "chile", nome: "Chile", datas: "29 out – 03 nov" },
   { id: "valores", nome: "Valores", datas: "Chile" },
 ];
 
