@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const CAPITULOS = [
   { id: "roteiro", nome: "São Paulo", datas: "26–28 out" },
   { id: "chile", nome: "Chile", datas: "29 out – 01 nov" },
+  { id: "valores", nome: "Valores", datas: "Chile" },
 ];
 
 /** Abas fixas dos capítulos; a ativa acompanha a seção visível na tela. */
@@ -20,6 +21,11 @@ export default function TripSwitcher() {
         const el = document.getElementById(c.id);
         if (el && el.getBoundingClientRect().top <= 140) atual = c.id;
       }
+      // A última seção é curta e pode nunca subir até a barra: no fim da página, ela vale.
+      const noFim =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4;
+      if (noFim) atual = CAPITULOS[CAPITULOS.length - 1].id;
       setAtivo(atual);
     };
     atualizar();

@@ -7,10 +7,11 @@ import {
   Info,
   MapPin,
   Mountain,
-  Plane,
   Sparkles,
   Ticket,
+  TicketsPlane,
   TrainFront,
+  Wallet,
 } from "lucide-react";
 import "./lua-de-mel.css";
 import TripSwitcher from "./TripSwitcher";
@@ -32,12 +33,17 @@ type Passeio = {
   foto: string;
   alt: string;
   horario: string;
-  preco?: string;
+  /** Preço por pessoa, em reais. O valor do casal é sempre o dobro. */
+  precoPessoa?: number;
+  agencia?: string;
   extra?: string;
   descricao: string;
   roteiro: Parada[];
   incluso?: string[];
 };
+
+const brl = (valor: number) =>
+  valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
 const SAO_PAULO: Passeio[] = [
   {
@@ -118,8 +124,8 @@ const CHILE: Passeio[] = [
     foto: "/lua-de-mel/cordilheira-sunset.jpg",
     alt: "Pôr do sol sobre a Cordilheira dos Andes nevada",
     horario: "7h a 8h de passeio",
-    preco: "R$ 309,68/pessoa",
-    extra: "Bora pro Chile · $48.000 CLP",
+    precoPessoa: 309.68,
+    agencia: "Bora pro Chile",
     descricao:
       "Mirantes, estações de esqui e o pôr do sol com piquenique lá no alto. O retorno acontece depois que o sol se põe.",
     roteiro: [
@@ -135,7 +141,8 @@ const CHILE: Passeio[] = [
     foto: "/lua-de-mel/embalse-el-yeso.jpg",
     alt: "Embalse El Yeso cercado por montanhas nevadas",
     horario: "5:00 às 18:00",
-    preco: "R$ 499/pessoa",
+    precoPessoa: 499,
+    agencia: "Elder Chile",
     descricao:
       "Passeio para contemplação e banho, com saída do hotel a partir das 5 da manhã e retorno em Santiago previsto às 18h.",
     roteiro: [
@@ -154,7 +161,8 @@ const CHILE: Passeio[] = [
     foto: "/lua-de-mel/laguna-del-inca.jpg",
     alt: "Laguna del Inca, em Portillo, cercada pelas montanhas nevadas",
     horario: "5:00 às 15:30",
-    preco: "R$ 289/pessoa",
+    precoPessoa: 289,
+    agencia: "Elder Chile",
     descricao:
       "Passeio para contemplação, com saída do hotel a partir das 5 da manhã e retorno em Santiago previsto às 15h30.",
     roteiro: [
@@ -166,6 +174,14 @@ const CHILE: Passeio[] = [
     incluso: ["Transporte", "Guia", "Piquenique"],
   },
 ];
+
+const PASSEIOS_PAGOS_CHILE = CHILE.filter(
+  (p): p is Passeio & { precoPessoa: number } => p.precoPessoa !== undefined
+);
+const TOTAL_PESSOA_CHILE = PASSEIOS_PAGOS_CHILE.reduce(
+  (soma, p) => soma + p.precoPessoa,
+  0
+);
 
 function PasseioCard({ p }: { p: Passeio }) {
   return (
@@ -179,13 +195,32 @@ function PasseioCard({ p }: { p: Passeio }) {
         <div className="tour-meta">
           <Clock3 size={17} aria-hidden="true" />
           <span>{p.horario}</span>
-          {p.preco && (
-            <>
+          {p.precoPessoa !== undefined && (
+            <span className="tour-price">
               <span className="dot" aria-hidden="true" />
-              <strong>{p.preco}</strong>
-            </>
+              <strong>{brl(p.precoPessoa)}/pessoa</strong>
+            </span>
           )}
         </div>
+        {p.precoPessoa !== undefined && (
+          <div className="tour-couple">
+            <span>
+              <Heart size={14} fill="currentColor" aria-hidden="true" /> Valor do
+              casal
+            </span>
+            <strong>{brl(p.precoPessoa * 2)}</strong>
+          </div>
+        )}
+        {p.agencia && (
+          <span className="tour-agency">
+            <span className="tour-agency-icon">
+              <TicketsPlane size={15} aria-hidden="true" />
+            </span>
+            <span>
+              Passeio com <strong>{p.agencia}</strong>
+            </span>
+          </span>
+        )}
         {p.extra && (
           <span className="tour-extra">
             <Ticket size={14} aria-hidden="true" /> {p.extra}
@@ -228,7 +263,7 @@ export default function LuaDeMelPage() {
   return (
     <main className="ldm">
       <header className="site-header">
-        <a className="brand" href="#topo" aria-label="Voltar ao início">
+        <a className="brand" href="#roteiro" aria-label="Voltar ao início">
           <span className="brand-mark">
             P<span>&</span>E
           </span>
@@ -241,38 +276,7 @@ export default function LuaDeMelPage() {
         </a>
       </header>
 
-      <div className="page-shell" id="topo">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <span className="eyebrow">
-              <Heart size={14} fill="currentColor" /> Nossa lua de mel
-            </span>
-            <h1 id="hero-title">Do coração de São Paulo às paisagens do Chile.</h1>
-            <p>
-              Um cantinho para guardar cada plano, cada parada e tudo o que
-              queremos viver juntos nessa viagem.
-            </p>
-            <div className="hero-meta" aria-label="Resumo da viagem">
-              <span>
-                <Plane size={17} /> Recife
-              </span>
-              <span className="route-line" aria-hidden="true" />
-              <span>São Paulo</span>
-              <span className="route-line" aria-hidden="true" />
-              <span>Chile</span>
-            </div>
-          </div>
-          <figure className="hero-photo">
-            <img
-              src="/lua-de-mel/ibirapuera.jpg"
-              alt="Lago e vegetação do Parque Ibirapuera, em São Paulo"
-            />
-            <figcaption>
-              <MapPin size={15} /> Primeiro capítulo: São Paulo
-            </figcaption>
-          </figure>
-        </section>
-
+      <div className="page-shell">
         <TripSwitcher />
 
         <section className="itinerary" id="roteiro" aria-labelledby="itinerary-title">
@@ -363,6 +367,45 @@ export default function LuaDeMelPage() {
             {CHILE.map((p) => (
               <PasseioCard key={p.data} p={p} />
             ))}
+          </div>
+        </section>
+
+        <section className="itinerary budget" id="valores" aria-labelledby="valores-title">
+          <div className="budget-card">
+            <div className="budget-head">
+              <span className="eyebrow">
+                <Wallet size={14} /> valores
+              </span>
+              <h2 id="valores-title">Passeios no Chile</h2>
+              <p>O valor de cada passeio por pessoa e o total pra nós dois.</p>
+            </div>
+
+            <div className="budget-rows">
+              {PASSEIOS_PAGOS_CHILE.map((p) => (
+                <div className="budget-row" key={p.data}>
+                  <div className="budget-info">
+                    <span className="budget-date">{p.data}</span>
+                    <strong>{p.titulo}</strong>
+                    {p.agencia && <small>{p.agencia}</small>}
+                  </div>
+                  <div className="budget-values">
+                    <span>{brl(p.precoPessoa)}/pessoa</span>
+                    <strong>{brl(p.precoPessoa * 2)}</strong>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="budget-total">
+              <div>
+                <span>
+                  <Heart size={15} fill="currentColor" aria-hidden="true" /> Total do
+                  casal
+                </span>
+                <small>{brl(TOTAL_PESSOA_CHILE)} por pessoa</small>
+              </div>
+              <strong>{brl(TOTAL_PESSOA_CHILE * 2)}</strong>
+            </div>
           </div>
         </section>
 

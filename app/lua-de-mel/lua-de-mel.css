@@ -32,27 +32,16 @@
 
 .ldm .site-header { height: 84px; max-width: 1240px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
 .ldm .brand { display: flex; align-items: center; gap: 12px; }
-.ldm .brand-mark { width: 43px; height: 43px; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); display: grid; place-items: center; font-family: Georgia, serif; font-size: 15px; letter-spacing: -.06em; }
+.ldm .brand-mark { width: 43px; height: 43px; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; font-size: 15px; letter-spacing: -.06em; }
 .ldm .brand-mark span { margin: 0 1px; color: #d8bea8; }
 .ldm .brand-copy { display: flex; flex-direction: column; font-size: 14px; font-weight: 720; line-height: 1.15; }
 .ldm .brand-copy small { margin-top: 4px; color: var(--muted-foreground); font-size: 10px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
 .ldm .header-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; background: #fff; border: 1px solid var(--border); border-radius: 999px; font-size: 13px; font-weight: 700; box-shadow: 0 5px 24px rgba(55, 74, 50, .06); }
 .ldm .page-shell { max-width: 1240px; margin: 0 auto; padding: 0 28px 80px; }
 
-.ldm .hero { min-height: 530px; display: grid; grid-template-columns: .88fr 1.12fr; gap: 26px; align-items: stretch; }
-.ldm .hero-copy { padding: 64px 46px 52px 22px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
 .ldm .eyebrow { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); font-size: 12px; font-weight: 780; letter-spacing: .12em; text-transform: uppercase; }
-.ldm .hero h1 { max-width: 600px; margin: 18px 0 22px; font-family: Georgia, serif; font-size: clamp(44px, 5.7vw, 76px); font-weight: 500; line-height: .98; letter-spacing: -.05em; }
-.ldm .hero-copy > p { max-width: 525px; margin: 0; color: var(--muted-foreground); font-size: 17px; line-height: 1.65; }
-.ldm .hero-meta { margin-top: 32px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--primary); font-size: 13px; font-weight: 760; }
-.ldm .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
-.ldm .route-line { width: 30px; height: 1px; background: var(--border); }
-.ldm .hero-photo { position: relative; min-height: 500px; margin: 0; overflow: hidden; border-radius: 32px; background: #d8ded4; }
-.ldm .hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(25,34,23,.58)); pointer-events: none; }
-.ldm .hero-photo img { height: 100%; object-fit: cover; }
-.ldm .hero-photo figcaption { position: absolute; z-index: 1; right: 22px; bottom: 22px; display: flex; align-items: center; gap: 8px; padding: 11px 15px; border: 1px solid rgba(255,255,255,.32); border-radius: 999px; color: #fff; background: rgba(31,40,29,.5); backdrop-filter: blur(12px); font-size: 12px; font-weight: 700; }
 
-.ldm .trip-switcher { position: sticky; z-index: 10; top: 14px; width: fit-content; margin: 28px auto 68px; padding: 5px; display: flex; gap: 4px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,251,248,.87); box-shadow: 0 12px 35px rgba(55,74,50,.09); backdrop-filter: blur(14px); }
+.ldm .trip-switcher { position: sticky; z-index: 10; top: 14px; width: fit-content; margin: 8px auto 52px; padding: 5px; display: flex; gap: 4px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,251,248,.87); box-shadow: 0 12px 35px rgba(55,74,50,.09); backdrop-filter: blur(14px); }
 .ldm .trip-tab { min-width: 158px; padding: 11px 18px; border-radius: 999px; display: flex; align-items: baseline; justify-content: center; gap: 7px; font-size: 14px; font-weight: 760; }
 .ldm .trip-tab small { font-size: 10px; font-weight: 650; opacity: .7; text-transform: uppercase; letter-spacing: .04em; }
 .ldm .trip-tab.active { color: var(--primary-foreground); background: var(--primary); }
@@ -78,7 +67,14 @@
 .ldm .tour-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding-bottom: 14px; border-bottom: 1px solid var(--border); color: #5d635a; font-size: 14px; }
 .ldm .tour-meta svg { color: var(--tour-accent); }
 .ldm .tour-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: #b9b3ad; }
+.ldm .tour-price { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
 .ldm .tour-meta strong { color: var(--primary); font-weight: 800; }
+.ldm .tour-couple { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 14px; border-radius: 14px; background: var(--primary); color: var(--primary-foreground); }
+.ldm .tour-couple span { display: inline-flex; align-items: center; gap: 7px; color: #d8bea8; font-size: 12px; font-weight: 780; letter-spacing: .06em; text-transform: uppercase; }
+.ldm .tour-couple strong { font-size: 18px; font-weight: 800; letter-spacing: -.01em; white-space: nowrap; }
+.ldm .tour-agency { align-self: flex-start; margin-top: 14px; display: inline-flex; align-items: center; gap: 9px; padding: 5px 14px 5px 5px; border: 1px solid #d6e0d2; border-radius: 999px; background: #edf1eb; color: #4b5a45; font-size: 13px; }
+.ldm .tour-agency strong { color: var(--primary); font-weight: 800; }
+.ldm .tour-agency-icon { width: 28px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); }
 .ldm .tour-extra { margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; color: #8b8f86; font-size: 12px; }
 .ldm .tour-extra svg { flex: 0 0 auto; color: var(--tour-accent); }
 .ldm .tour-desc { margin: 12px 0 18px; color: #555b51; font-size: 14.5px; line-height: 1.6; }
@@ -105,6 +101,27 @@
 .ldm .note-list span { color: var(--accent); font-family: Georgia, serif; font-size: 15px; }
 .ldm .note-list p { margin: 0; color: #4d554a; font-size: 15px; line-height: 1.6; }
 
+/* Resumo de valores do Chile */
+.ldm .budget { margin-top: 64px; }
+.ldm .budget-card { overflow: hidden; border: 1px solid var(--border); border-radius: 28px; background: var(--card); box-shadow: 0 18px 54px rgba(64,48,38,.08); }
+.ldm .budget-head { padding: 30px 32px 22px; }
+.ldm .budget-head h2 { margin: 10px 0 6px; font-family: Georgia, serif; font-size: clamp(30px, 4vw, 42px); font-weight: 500; line-height: 1.05; letter-spacing: -.03em; }
+.ldm .budget-head p { margin: 0; color: var(--muted-foreground); font-size: 14px; }
+.ldm .budget-rows { border-top: 1px solid var(--border); }
+.ldm .budget-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 32px; border-bottom: 1px solid var(--border); }
+.ldm .budget-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.ldm .budget-date { color: var(--tour-accent-dark); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.ldm .budget-info strong { font-size: 15px; font-weight: 750; }
+.ldm .budget-info small { color: var(--muted-foreground); font-size: 12px; }
+.ldm .budget-values { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; white-space: nowrap; }
+.ldm .budget-values span { color: var(--muted-foreground); font-size: 12px; }
+.ldm .budget-values strong { color: var(--primary); font-size: 17px; font-weight: 800; }
+.ldm .budget-total { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 32px; background: var(--primary); color: var(--primary-foreground); }
+.ldm .budget-total > div { display: flex; flex-direction: column; gap: 4px; }
+.ldm .budget-total span { display: inline-flex; align-items: center; gap: 8px; color: #d8bea8; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.ldm .budget-total small { color: rgba(255,250,246,.7); font-size: 12px; }
+.ldm .budget-total strong { font-size: clamp(26px, 4vw, 34px); font-weight: 800; letter-spacing: -.02em; white-space: nowrap; }
+
 .ldm footer { margin-top: 60px; padding: 30px 4px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted-foreground); font-size: 10px; }
 .ldm .footer-love { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); font-weight: 760; letter-spacing: .05em; text-transform: uppercase; }
 .ldm .photo-credits { text-align: right; }
@@ -114,12 +131,7 @@
   .ldm .brand-copy { display: none; }
   .ldm .header-pill { padding: 9px 12px; }
   .ldm .page-shell { padding: 0 16px 60px; }
-  .ldm .hero { min-height: auto; grid-template-columns: 1fr; }
-  .ldm .hero-copy { padding: 44px 6px 12px; }
-  .ldm .hero h1 { font-size: clamp(42px, 13vw, 62px); }
-  .ldm .hero-copy > p { font-size: 15px; }
-  .ldm .hero-photo { min-height: 410px; border-radius: 26px; }
-  .ldm .trip-switcher { width: 100%; margin: 22px 0 54px; }
+  .ldm .trip-switcher { width: 100%; margin: 4px 0 40px; }
   .ldm .trip-tab { min-width: 0; flex: 1; padding-inline: 10px; }
   .ldm .section-heading { align-items: flex-start; flex-direction: column; }
   .ldm .summary-chips { justify-content: flex-start; }
@@ -129,13 +141,21 @@
   .ldm .game-note { grid-template-columns: auto 1fr; padding: 26px 22px; }
   .ldm .note-badge { grid-column: 2; width: fit-content; }
   .ldm .notes-section { margin: 78px 0; padding: 0 6px; grid-template-columns: 1fr; gap: 38px; }
+  .ldm .budget { margin-top: 48px; }
+  .ldm .budget-head { padding: 24px 20px 18px; }
+  .ldm .budget-row { padding: 16px 20px; }
+  .ldm .budget-total { padding: 20px; }
   .ldm footer { align-items: flex-start; flex-direction: column; }
   .ldm .photo-credits { text-align: left; line-height: 1.5; }
 }
 
+@media (max-width: 560px) {
+  .ldm .trip-tab small { display: none; }
+}
+
 @media (max-width: 420px) {
-  .ldm .hero-photo { min-height: 350px; }
-  .ldm .hero-photo figcaption { left: 14px; right: auto; bottom: 14px; }
+  .ldm .tour-meta { gap: 6px; font-size: 13px; }
+  .ldm .tour-meta span, .ldm .tour-meta strong { white-space: nowrap; }
   .ldm .summary-chips span { width: 100%; }
   .ldm .game-note { grid-template-columns: 1fr; }
   .ldm .note-badge { grid-column: 1; }
