@@ -141,6 +141,24 @@ const CHILE: Passeio[] = [
   },
   {
     data: "Sáb · 31/10",
+    titulo: "Portillo y Laguna del Inca",
+    foto: "/lua-de-mel/laguna-del-inca.jpg",
+    alt: "Laguna del Inca, em Portillo, cercada pelas montanhas nevadas",
+    horario: "5:00 às 15:30",
+    precoPessoa: 289,
+    agencia: "Elder Chile",
+    descricao:
+      "Passeio para contemplação, com saída do hotel a partir das 5 da manhã e retorno em Santiago previsto às 15h30.",
+    roteiro: [
+      "Salto del Soldado",
+      "Curva Caracoles",
+      "Fronteira Chile x Argentina",
+      "Laguna del Inca",
+    ],
+    incluso: ["Transporte", "Guia", "Piquenique"],
+  },
+  {
+    data: "Dom · 01/11",
     titulo: "Cajón del Maipo y Embalse + Termas de Colina",
     foto: "/lua-de-mel/embalse-el-yeso.jpg",
     alt: "Embalse El Yeso cercado por montanhas nevadas",
@@ -158,24 +176,6 @@ const CHILE: Passeio[] = [
       "Termas de Colina",
     ],
     incluso: ["Transporte", "Guia", "Piquenique", "Ingresso termas"],
-  },
-  {
-    data: "Dom · 01/11",
-    titulo: "Portillo y Laguna del Inca",
-    foto: "/lua-de-mel/laguna-del-inca.jpg",
-    alt: "Laguna del Inca, em Portillo, cercada pelas montanhas nevadas",
-    horario: "5:00 às 15:30",
-    precoPessoa: 289,
-    agencia: "Elder Chile",
-    descricao:
-      "Passeio para contemplação, com saída do hotel a partir das 5 da manhã e retorno em Santiago previsto às 15h30.",
-    roteiro: [
-      "Salto del Soldado",
-      "Curva Caracoles",
-      "Fronteira Chile x Argentina",
-      "Laguna del Inca",
-    ],
-    incluso: ["Transporte", "Guia", "Piquenique"],
   },
   {
     data: "Seg · 02/11",
