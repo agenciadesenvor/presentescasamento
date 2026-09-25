@@ -179,25 +179,6 @@ const CHILE: Passeio[] = [
   },
   {
     data: "Seg · 02/11",
-    titulo: "City Tour em Santiago",
-    foto: "/lua-de-mel/city-tour-santiago.jpg",
-    alt: "Plaza de Armas e a Catedral Metropolitana de Santiago",
-    horario: "Dia inteiro",
-    porContaPropria: true,
-    extra: "Roteiro sugerido: ajustem como quiserem",
-    descricao:
-      "Um dia pra explorar o centro de Santiago no nosso ritmo: praças, palácios, mirantes e comidinhas locais.",
-    roteiro: [
-      ["Manhã", "Plaza de Armas e Catedral Metropolitana"],
-      "Palacio de La Moneda (pátios abertos de seg a sex)",
-      "Cerro Santa Lucía e o mirante do centro",
-      ["Almoço", "Bairro Lastarria"],
-      "Mercado Central",
-      ["Noite", "Jantar em Bellavista"],
-    ],
-  },
-  {
-    data: "Ter · 03/11",
     titulo: "Vinícola Concha y Toro",
     foto: "/lua-de-mel/concha-y-toro.jpg",
     alt: "Casona histórica da Viña Concha y Toro, em Pirque",
@@ -210,6 +191,24 @@ const CHILE: Passeio[] = [
       "Passeio pelos vinhedos",
       "Adega do Casillero del Diablo",
       "Degustação de vinhos",
+    ],
+  },
+  {
+    data: "Ter · 03/11",
+    titulo: "City Tour em Santiago",
+    foto: "/lua-de-mel/city-tour-santiago.jpg",
+    alt: "Plaza de Armas e a Catedral Metropolitana de Santiago",
+    horario: "Dia inteiro",
+    porContaPropria: true,
+    extra: "Roteiro sugerido: ajustem como quiserem",
+    descricao:
+      "Um dia pra explorar Santiago no nosso ritmo: praças, palácios, mirantes e, no fim da tarde, a cidade inteira vista do alto do Cerro San Cristóbal.",
+    roteiro: [
+      ["Manhã", "Plaza de Armas e Catedral Metropolitana"],
+      "Palacio de La Moneda e Cerro Santa Lucía",
+      ["Almoço", "Bairro Lastarria ou Mercado Central"],
+      ["Tarde", "Teleférico + funicular no Cerro San Cristóbal (presente da nossa lista 🤎)"],
+      ["Noite", "Jantar em Bellavista, no pé do cerro"],
     ],
   },
 ];
