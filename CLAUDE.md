@@ -43,7 +43,10 @@ Sempre ≥ Next 16 — a Vercel **bloqueia** versões vulneráveis do Next.
 ## Modelo de dados (Supabase)
 
 - `gifts`: id, slug, title, description, `category` (`divertidas`|`casa`|`cozinha`|`lua_de_mel`), `is_fun`,
-  `cota_price` (centavos), `total_cotas`, `photos` (text[]), `sort_order`, `active`.
+  `cota_price` (centavos), `total_cotas`, `photos` (text[]), `sort_order`, `active`, `valor_livre`.
+  - **Valor livre** (`valor_livre = true`): o convidado digita quanto quer dar. Aí `cota_price` é o
+    **valor mínimo** e `total_cotas` é só um teto alto; o checkout valida o valor no servidor
+    (mínimo ≤ valor ≤ `VALOR_LIVRE_MAX_CENTS`, R$ 10.000). Aparece sempre primeiro na grade.
 - `purchases`: compra de cotas + recado; status `pending`→`paid` (webhook dá baixa). Só admin lê.
 - `messages`: recados públicos do mural.
 - `settings`: nomes do casal, data, tagline.
