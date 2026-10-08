@@ -16,7 +16,12 @@ export type Gift = {
   photos: string[];
   sortOrder: number;
   active: boolean;
+  /** Valor livre: o convidado escolhe quanto dar (cotaPrice vira o valor mínimo). */
+  customAmount?: boolean;
 };
+
+/** Teto do presente de valor livre, em centavos (evita erro de digitação gigante). */
+export const VALOR_LIVRE_MAX_CENTS = 1_000_000;
 
 export type PurchaseStatus = "pending" | "paid" | "failed";
 

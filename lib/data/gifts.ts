@@ -19,6 +19,7 @@ type GiftRow = {
   photos: string[] | null;
   sort_order: number;
   active: boolean;
+  valor_livre?: boolean | null;
 };
 
 function mapGift(row: GiftRow): Gift {
@@ -35,6 +36,7 @@ function mapGift(row: GiftRow): Gift {
     photos: row.photos ?? [],
     sortOrder: row.sort_order,
     active: row.active,
+    customAmount: row.valor_livre ?? false,
   };
 }
 

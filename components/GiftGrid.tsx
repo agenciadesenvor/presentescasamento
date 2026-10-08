@@ -28,10 +28,12 @@ export default function GiftGrid({ gifts }: { gifts: Gift[] }) {
     [gifts, filter]
   );
 
-  // Mantém uma ordem agradável: divertidas primeiro quando em "todos"
+  // Mantém uma ordem agradável em "todos": valor livre no topo, depois divertidas.
   const ordered = useMemo(() => {
     if (filter !== "todos") return visible;
     return [...visible].sort((a, b) => {
+      if (Boolean(a.customAmount) !== Boolean(b.customAmount))
+        return a.customAmount ? -1 : 1;
       const ca = CATEGORY_ORDER.indexOf(a.category);
       const cb = CATEGORY_ORDER.indexOf(b.category);
       if (ca !== cb) return ca - cb;

@@ -22,6 +22,8 @@ export type CreatePreferenceInput = {
   quantity: number;
   /** preço de UMA cota, em centavos */
   unitPriceCents: number;
+  /** Nome do item no checkout; por padrão "Título (N cotas)". */
+  itemTitle?: string;
   buyerName: string;
   buyerEmail: string;
 };
@@ -38,9 +40,11 @@ export async function createPreference(
       items: [
         {
           id: input.purchaseId,
-          title: `${input.title} (${input.quantity} ${
-            input.quantity === 1 ? "cota" : "cotas"
-          })`,
+          title:
+            input.itemTitle ??
+            `${input.title} (${input.quantity} ${
+              input.quantity === 1 ? "cota" : "cotas"
+            })`,
           quantity: input.quantity,
           unit_price: input.unitPriceCents / 100,
           currency_id: "BRL",

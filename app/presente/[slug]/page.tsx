@@ -49,24 +49,37 @@ export default async function GiftPage({
 
         <div className="flex flex-col gap-4">
           <span className="pill w-fit bg-mocha-100 text-mocha-500">
-            {CATEGORY_EMOJI[gift.category]} {CATEGORY_LABELS[gift.category]}
+            {gift.customAmount
+              ? "💛 Valor livre"
+              : `${CATEGORY_EMOJI[gift.category]} ${CATEGORY_LABELS[gift.category]}`}
             {gift.isFun && " · ✨ divertida"}
           </span>
           <h1 className="font-serif text-3xl leading-tight text-ink sm:text-4xl">
             {gift.title}
           </h1>
           <p className="text-muted">{gift.description}</p>
-          <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-semibold text-ink">
-              {formatBRL(gift.cotaPrice)}
-            </span>
-            <span className="text-muted">por cota</span>
-            {left > 0 && (
-              <span className="text-sm text-muted">
-                · {left} disponíveis
+          {gift.customAmount ? (
+            <div className="flex items-baseline gap-2">
+              <span className="text-2xl font-semibold text-ink">
+                Você escolhe o valor
               </span>
-            )}
-          </div>
+              <span className="text-sm text-muted">
+                · a partir de {formatBRL(gift.cotaPrice)}
+              </span>
+            </div>
+          ) : (
+            <div className="flex items-baseline gap-2">
+              <span className="text-2xl font-semibold text-ink">
+                {formatBRL(gift.cotaPrice)}
+              </span>
+              <span className="text-muted">por cota</span>
+              {left > 0 && (
+                <span className="text-sm text-muted">
+                  · {left} disponíveis
+                </span>
+              )}
+            </div>
+          )}
 
           <div className="mt-2">
             <PurchaseForm gift={gift} />

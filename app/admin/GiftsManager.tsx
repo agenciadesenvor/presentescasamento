@@ -127,8 +127,17 @@ export default function GiftsManager({ gifts }: { gifts: Gift[] }) {
                 )}
               </p>
               <p className="text-xs text-muted">
-                {CATEGORY_LABELS[g.category]} · {formatBRL(g.cotaPrice)}/cota ·{" "}
-                {g.cotasSold}/{g.totalCotas} vendidas · {cotasLeft(g)} restantes
+                {g.customAmount ? (
+                  <>
+                    💛 Valor livre (mínimo {formatBRL(g.cotaPrice)}) ·{" "}
+                    {g.cotasSold} {g.cotasSold === 1 ? "presente recebido" : "presentes recebidos"}
+                  </>
+                ) : (
+                  <>
+                    {CATEGORY_LABELS[g.category]} · {formatBRL(g.cotaPrice)}/cota ·{" "}
+                    {g.cotasSold}/{g.totalCotas} vendidas · {cotasLeft(g)} restantes
+                  </>
+                )}
               </p>
             </div>
             <div className="flex shrink-0 items-center gap-1">

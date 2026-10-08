@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 /**
  * Webhook do Mercado Pago. Recebe a notificação, RE-CONSULTA o pagamento na API
  * do MP (fonte da verdade) e, se aprovado, marca a compra como paga. A baixa é
- * idempotente: só atualiza compras que ainda estão "pending".
+ * idempotente: nunca mexe em compras que já estão "paid".
  */
 export async function POST(req: Request) {
   if (!isMpConfigured) {
@@ -53,7 +53,10 @@ export async function POST(req: Request) {
           paid_at: new Date().toISOString(),
         })
         .eq("id", purchaseId)
-        .eq("status", "pending"); // idempotência
+        // Uma tentativa recusada antes (cartão negado) deixa a compra como "failed";
+        // a aprovação seguinte da mesma compra precisa sobrescrever. "paid" fica de
+        // fora para manter a baixa idempotente.
+        .in("status", ["pending", "failed"]);
       if (error) console.error("webhook update paid:", error.message);
     } else if (status === "rejected" || status === "cancelled") {
       await supabase

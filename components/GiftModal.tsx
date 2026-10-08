@@ -101,7 +101,9 @@ export default function GiftModal({
           <div className="flex flex-col gap-4 p-4 sm:p-6">
             <div>
               <span className="pill bg-mocha-100 text-mocha-500">
-                {CATEGORY_EMOJI[gift.category]} {CATEGORY_LABELS[gift.category]}
+                {gift.customAmount
+                  ? "💛 Valor livre"
+                  : `${CATEGORY_EMOJI[gift.category]} ${CATEGORY_LABELS[gift.category]}`}
                 {gift.isFun && " · ✨ divertida"}
               </span>
               <h2 className="mt-3 font-serif text-2xl leading-tight text-ink sm:text-3xl">

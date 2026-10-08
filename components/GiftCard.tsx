@@ -19,8 +19,9 @@ export default function GiftCard({
   onOpen: (gift: Gift) => void;
 }) {
   const [fav, setFav] = useState(false);
+  const livre = Boolean(gift.customAmount);
   const left = cotasLeft(gift);
-  const soldOut = left <= 0;
+  const soldOut = !livre && left <= 0;
 
   return (
     <button
@@ -38,7 +39,9 @@ export default function GiftCard({
 
         {/* Selo de categoria */}
         <span className="pill absolute left-3 top-3 bg-white/90 text-ink backdrop-blur">
-          {CATEGORY_EMOJI[gift.category]} {CATEGORY_LABELS[gift.category]}
+          {livre
+            ? "💛 Valor livre"
+            : `${CATEGORY_EMOJI[gift.category]} ${CATEGORY_LABELS[gift.category]}`}
         </span>
 
         {/* Selo divertido */}
@@ -83,13 +86,22 @@ export default function GiftCard({
         <p className="mt-0.5 line-clamp-2 text-sm text-muted">
           {gift.description}
         </p>
-        <div className="mt-2 flex items-baseline gap-1">
-          <span className="font-semibold text-ink">
-            {formatBRL(gift.cotaPrice)}
-          </span>
-          <span className="text-sm text-muted">· a cota</span>
-        </div>
-        {!soldOut && (
+        {livre ? (
+          <>
+            <p className="mt-2 font-semibold text-ink">Você escolhe o valor</p>
+            <p className="mt-0.5 text-xs text-muted">
+              a partir de {formatBRL(gift.cotaPrice)}
+            </p>
+          </>
+        ) : (
+          <div className="mt-2 flex items-baseline gap-1">
+            <span className="font-semibold text-ink">
+              {formatBRL(gift.cotaPrice)}
+            </span>
+            <span className="text-sm text-muted">· a cota</span>
+          </div>
+        )}
+        {!livre && !soldOut && (
           <p className="mt-0.5 text-xs text-muted">
             {left} {left === 1 ? "cota disponível" : "cotas disponíveis"}
           </p>

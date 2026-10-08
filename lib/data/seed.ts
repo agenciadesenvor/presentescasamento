@@ -23,6 +23,22 @@ type SeedGift = Omit<Gift, "cotasSold"> & { cotasSold?: number };
 
 const RAW: SeedGift[] = [
   {
+    id: "presente-valor-livre",
+    slug: "presente-valor-livre",
+    title: "Um presente do seu jeito",
+    description:
+      "Prefere escolher o valor? Digite quanto quer dar e pague por PIX ou cartão. Todo carinho conta — e vira casa nova, lua de mel e muitas memórias pra nós dois.",
+    category: "casa",
+    isFun: false,
+    cotaPrice: 1000,
+    totalCotas: 100000,
+    cotasSold: 0,
+    photos: ["/gifts/valor-livre.jpg"],
+    sortOrder: 0,
+    active: true,
+    customAmount: true,
+  },
+  {
     id: "jiu-jitsu-do-noivo",
     slug: "jiu-jitsu-do-noivo",
     title: "Um mês de jiu-jitsu pro noivo",
