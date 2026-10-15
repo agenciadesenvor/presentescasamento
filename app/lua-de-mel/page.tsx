@@ -11,7 +11,6 @@ import {
   Sparkles,
   Ticket,
   TicketsPlane,
-  TrainFront,
   Wallet,
 } from "lucide-react";
 import "./lua-de-mel.css";
@@ -88,19 +87,19 @@ const SAO_PAULO: Passeio[] = [
   },
   {
     data: "Qua · 28/10",
-    titulo: "Ibirapuera + Corinthians",
-    foto: "/lua-de-mel/arena.jpg",
-    alt: "Exterior da Neo Química Arena",
-    horario: "Manhã até o jogo",
-    extra: "Sair da República 2h a 2h30 antes do jogo",
+    titulo: "Ibirapuera + última noite em SP",
+    foto: "/lua-de-mel/ibirapuera.jpg",
+    alt: "Lago e vegetação do Parque Ibirapuera, em São Paulo",
+    horario: "Manhã até a noite",
+    extra: "Malas prontas: amanhã é dia de Chile",
     descricao:
-      "Manhã verde no Ibirapuera, pausa pra recarregar e, à noite, Neo Química Arena em clima de jogo.",
+      "Manhã verde no Ibirapuera, tarde sem pressa e a última noite em São Paulo antes do voo pro Chile.",
     roteiro: [
       ["Manhã", "Parque Ibirapuera"],
       "Lago, Marquise, Monumento às Bandeiras e entorno do Auditório",
       "Almoço leve e descanso no hotel",
-      "Linha 3–Vermelha até Corinthians–Itaquera",
-      ["Noite", "Corinthians x Mirassol"],
+      ["Tarde", "Tempo livre: compras ou um café"],
+      ["Noite", "Jantar de despedida de SP e malas pro Chile"],
     ],
   },
 ];
@@ -362,23 +361,6 @@ export default function LuaDeMelPage() {
             ))}
           </div>
 
-          <aside className="game-note" aria-label="Informações para o dia do jogo">
-            <span className="note-icon">
-              <TrainFront size={24} />
-            </span>
-            <div>
-              <span className="day-kicker">Para chegar com calma</span>
-              <h3>Saída da República com 2h a 2h30 de antecedência.</h3>
-              <p>
-                Linha 3–Vermelha até Corinthians–Itaquera. Nesse dia, vale
-                guardar energia para o jogo e deixar o tour ou o museu da arena
-                para outra ocasião.
-              </p>
-            </div>
-            <span className="note-badge">
-              <CircleCheck size={15} /> plano esperto
-            </span>
-          </aside>
         </section>
 
         <section className="notes-section" aria-labelledby="notes-title">
@@ -399,7 +381,7 @@ export default function LuaDeMelPage() {
             </div>
             <div>
               <span>03</span>
-              <p>Depois do Ibirapuera, uma pausa no hotel ajuda a guardar energia para o jogo.</p>
+              <p>Na última noite em SP, malas prontas: o voo pro Chile sai no dia 29.</p>
             </div>
           </div>
         </section>
