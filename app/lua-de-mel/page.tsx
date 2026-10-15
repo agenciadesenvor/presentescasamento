@@ -123,19 +123,20 @@ const CHILE: Passeio[] = [
   },
   {
     data: "Sex · 30/10",
-    titulo: "Cordilheira Sunset",
-    foto: "/lua-de-mel/cordilheira-sunset.jpg",
-    alt: "Pôr do sol sobre a Cordilheira dos Andes nevada",
-    horario: "7h a 8h de passeio",
-    precoPessoa: 309.68,
+    titulo: "Ski Day — Valle Nevado",
+    foto: "/lua-de-mel/ski-day.jpg",
+    alt: "Esquiador em Valle Nevado, com os prédios da estação e os Andes nevados ao fundo",
+    horario: "11h a 12h de passeio",
+    precoPessoa: 258.06,
     agencia: "Bora pro Chile",
+    extra: "Aluguel de roupas/equipamentos e ingresso do parque à parte",
     descricao:
-      "Mirantes, estações de esqui e o pôr do sol com piquenique lá no alto. O retorno acontece depois que o sol se põe.",
+      "A temporada do Valle Nevado foi prorrogada, então trocamos o sunset pelo dia de neve: endorfina e adrenalina voando sobre a neve nos Andes!",
     roteiro: [
-      "Mirante Curva 32 (vista panorâmica)",
-      "Tour panorâmico no Valle Nevado",
-      "Tour panorâmico em Farellones",
-      "Pôr do sol e piquenique no Refúgio Bora pro Chile, em Farellones",
+      "Parada no rental: aluguel de roupas de neve",
+      "Subida da Cordilheira dos Andes",
+      "Dia de neve no Valle Nevado (dá pra trocar por El Colorado ou La Parva)",
+      "Esqui, snowboard ou a primeira experiência na neve",
     ],
   },
   {
@@ -469,7 +470,8 @@ export default function LuaDeMelPage() {
           <div className="photo-credits">
             Fotos: Renato S. Rodrigues, Slyronit, Jorge M. Piderit, Pablo
             Acevedo (CC0), PeladínSinOlfato (CC BY-SA 3.0), Sfs90 (CC BY-SA 4.0),
-            Apincheira (CC BY-SA 3.0), Unsplash e acervo Wikimedia Commons.
+            Apincheira (CC BY-SA 3.0), Bora pro Chile, Unsplash e acervo
+            Wikimedia Commons.
           </div>
         </footer>
       </div>
