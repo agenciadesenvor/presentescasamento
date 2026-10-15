@@ -211,6 +211,37 @@ const CHILE: Passeio[] = [
       ["Noite", "Jantar em Bellavista, no pé do cerro"],
     ],
   },
+  {
+    data: "Qua · 04/11",
+    titulo: "Dia livre em Santiago",
+    foto: "/lua-de-mel/cordilheira-sunset.jpg",
+    alt: "Pôr do sol sobre a Cordilheira dos Andes nevada",
+    horario: "Em aberto",
+    porContaPropria: true,
+    extra: "Sem compromisso: a gente decide por lá",
+    descricao:
+      "Dia de sobra de propósito: repetir o lugar favorito, caçar as últimas lembrancinhas ou simplesmente não fazer nada juntos.",
+    roteiro: [
+      "Em aberto — vamos decidir por lá",
+      "Ideias: compras, cafés e repetir o que a gente mais amou",
+    ],
+  },
+  {
+    data: "Qui · 05/11",
+    titulo: "Despedida + voo de volta",
+    foto: "/lua-de-mel/voo-volta.jpg",
+    alt: "Asa de avião sobre as nuvens ao pôr do sol",
+    horario: "Manhã livre · voo às 16h45",
+    extra: "Check-out e aeroporto com antecedência",
+    descricao:
+      "Manhã em aberto pra última volta por Santiago e, à tarde, o voo de volta — fim do primeiro capítulo da vida de casados.",
+    roteiro: [
+      ["Manhã", "Livre — em aberto"],
+      "Check-out e malas",
+      "Transfer pro aeroporto",
+      ["16h45", "Voo de volta pro Brasil"],
+    ],
+  },
 ];
 
 const PASSEIOS_COM_VALOR_CHILE = CHILE.filter(
@@ -331,7 +362,7 @@ export default function LuaDeMelPage() {
           </span>
         </a>
         <a className="header-pill" href="#roteiro">
-          <CalendarDays size={17} aria-hidden="true" /> 26 out – 03 nov
+          <CalendarDays size={17} aria-hidden="true" /> 26 out – 05 nov
         </a>
       </header>
 
@@ -397,7 +428,7 @@ export default function LuaDeMelPage() {
             </div>
             <div className="summary-chips" aria-label="Informações principais">
               <span>
-                <CalendarDays size={16} /> 29 out – 03 nov
+                <CalendarDays size={16} /> 29 out – 05 nov
               </span>
               <span>
                 <MapPin size={16} /> Base: Santiago
