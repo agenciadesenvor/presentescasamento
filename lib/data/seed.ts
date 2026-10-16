@@ -238,7 +238,7 @@ const RAW: SeedGift[] = [
       "Subir a Cordilheira no fim da tarde e ver o sol se pôr sobre os picos nevados, com o céu pegando fogo sobre os Andes. O espetáculo que fecha o dia no Chile.",
     category: "lua_de_mel",
     isFun: false,
-    cotaPrice: 54900,
+    cotaPrice: 30968,
     totalCotas: 2,
     cotasSold: 0,
     photos: ["/gifts/sunset-cordilheira-andes.jpg"],
@@ -396,6 +396,21 @@ const RAW: SeedGift[] = [
       IMG("photo-1567072629554-20e689de2400"),
     ],
     sortOrder: 23,
+    active: false, // trocada pela Concha y Toro (tem 1 cota paga)
+  },
+  {
+    id: "vinicola-concha-y-toro",
+    slug: "vinicola-concha-y-toro",
+    title: "Vinícola Concha y Toro",
+    description:
+      "A vinícola mais famosa do Chile, em Pirque: a casona histórica, os jardins, os vinhedos e a lendária adega do Casillero del Diablo, com degustação dos vinhos da casa. Foto: Apincheira (CC BY-SA 3.0).",
+    category: "lua_de_mel",
+    isFun: false,
+    cotaPrice: 30000,
+    totalCotas: 2,
+    cotasSold: 0,
+    photos: ["/gifts/concha-y-toro.jpg"],
+    sortOrder: 23,
     active: true,
   },
   {
@@ -411,7 +426,7 @@ const RAW: SeedGift[] = [
     cotasSold: 0,
     photos: ["/gifts/amor-y-pasta.jpg"],
     sortOrder: 24,
-    active: true,
+    active: false, // removido do site
   },
   {
     id: "jantar-em-sao-paulo",
