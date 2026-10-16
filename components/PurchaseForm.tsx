@@ -157,9 +157,6 @@ export default function PurchaseForm({ gift }: { gift: Gift }) {
               );
             })}
           </div>
-          <p className="mt-2 text-xs text-muted">
-            A partir de {formatBRL(gift.cotaPrice)} · qualquer valor é um presentão 💛
-          </p>
         </div>
       ) : (
       /* Seletor de cotas */
