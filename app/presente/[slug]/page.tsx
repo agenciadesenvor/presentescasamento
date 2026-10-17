@@ -59,14 +59,9 @@ export default async function GiftPage({
           </h1>
           <p className="text-muted">{gift.description}</p>
           {gift.customAmount ? (
-            <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-semibold text-ink">
-                Você escolhe o valor
-              </span>
-              <span className="text-sm text-muted">
-                · a partir de {formatBRL(gift.cotaPrice)}
-              </span>
-            </div>
+            <span className="text-2xl font-semibold text-ink">
+              Você escolhe o valor
+            </span>
           ) : (
             <div className="flex items-baseline gap-2">
               <span className="text-2xl font-semibold text-ink">

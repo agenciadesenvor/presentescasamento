@@ -87,12 +87,7 @@ export default function GiftCard({
           {gift.description}
         </p>
         {livre ? (
-          <>
-            <p className="mt-2 font-semibold text-ink">Você escolhe o valor</p>
-            <p className="mt-0.5 text-xs text-muted">
-              a partir de {formatBRL(gift.cotaPrice)}
-            </p>
-          </>
+          <p className="mt-2 font-semibold text-ink">Você escolhe o valor</p>
         ) : (
           <div className="mt-2 flex items-baseline gap-1">
             <span className="font-semibold text-ink">

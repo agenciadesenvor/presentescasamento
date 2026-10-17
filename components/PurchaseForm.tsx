@@ -9,7 +9,7 @@ import {
   type Gift,
 } from "@/lib/types";
 
-const VALORES_RAPIDOS = [5000, 10000, 20000, 30000, 50000];
+const VALORES_RAPIDOS = [10000, 15000, 20000, 30000, 50000];
 
 /** Converte o que o convidado digitou ("150", "150,50", "1.500") em centavos. */
 function reaisParaCentavos(texto: string): number | null {

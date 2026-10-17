@@ -30,7 +30,7 @@ const RAW: SeedGift[] = [
       "Prefere escolher o valor? Digite quanto quer dar e pague por PIX ou cartão. Todo carinho conta — e vira casa nova, lua de mel e muitas memórias pra nós dois.",
     category: "casa",
     isFun: false,
-    cotaPrice: 1000,
+    cotaPrice: 7000,
     totalCotas: 100000,
     cotasSold: 0,
     photos: ["/gifts/valor-livre.jpg"],
